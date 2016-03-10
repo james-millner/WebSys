@@ -24,5 +24,12 @@
 
 </head>
   <body>
+  <div class="container">
+    <nav class="navbar navbar-inverse">
+      <p class="navbar-text">Home</p>
+      <p class="navbar-text">About</p>
+      <p class="navbar-text">Application</p>
+    </nav>
+  </div>
   </body>
 </html>
