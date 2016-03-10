@@ -29,8 +29,9 @@
       <p class="navbar-text">Home</p>
       <p class="navbar-text">About</p>
       <p class="navbar-text">Application</p>
+      <p style="padding-right: 50px" class="navbar-text navbar-right">Signed in as: ${name}</p>
     </nav>
-    <p>Hi ${name}</p>
+
   </div>
   </body>
 </html>
