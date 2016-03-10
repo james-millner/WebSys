@@ -30,6 +30,7 @@
       <p class="navbar-text">About</p>
       <p class="navbar-text">Application</p>
     </nav>
+    <p>Hi ${name}</p>
   </div>
   </body>
 </html>

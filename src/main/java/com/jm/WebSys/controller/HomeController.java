@@ -17,6 +17,8 @@ public class HomeController {
     @RequestMapping("/homepage")
     public String home(Model model,
                        @RequestParam("name") String name) {
+
+        model.addAttribute("name", name);
         return "homepage";
     }
 
