@@ -60,6 +60,8 @@ public class SignInController {
 
     	System.out.println("not recognised");
 
+			model.addAttribute("error", "Username or password incorrect. Please try again.");
+
     	return "signIn";
     	}
     }
