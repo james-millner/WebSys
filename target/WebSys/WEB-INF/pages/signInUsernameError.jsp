@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" >
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="/resources/css/main.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 
 </head>
@@ -21,11 +22,11 @@
     <div class="container" align="center" >
 
     <form style="width: 500px">
-        <h2 class="form-signin-heading">An error has occured.</h2>
+        <h2 class="form-signin-heading">Username error. Please see below.</h2>
 
-        <p class="lead">The username ${username} is already taken.</p>
+        <p class="lead">The username ${name} is already taken. Please return and enter a new username.</p>
 
-        <a href="/register" class="btn btn-primary" type="submit">Back to sign in.</a>
+        <a href="/register" class="btn btn-warning" type="submit">Back to sign in.</a>
     </form>
 
     </div> <!-- /container -->
