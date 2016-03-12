@@ -33,6 +33,7 @@
   		<input type="password" id="inputPassword" class="form-control" placeholder="Password *" type="text" name="password" required/>
           </div>
         <div class="button-box col-lg-12">
+            <p>${error}</p>
         <button class="btn btn-warning " type="submit">Sign in</button>
         <a href="/register" class="btn btn-warning " type="submit">Register</a>
         </div>

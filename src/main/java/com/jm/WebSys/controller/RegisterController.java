@@ -2,6 +2,7 @@
 package com.jm.WebSys.controller;
 
 //Import models being used. 
+import com.jm.WebSys.converter.UserConverter;
 import com.jm.WebSys.domain.User;
 import com.jm.WebSys.domain.Encrypter;
 
@@ -18,6 +19,7 @@ import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.MongoClient;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 /**
@@ -64,8 +66,10 @@ public class RegisterController {
 
                 while (cursor.hasNext()) {
                     //Success
-                    System.out.println(cursor.next());
-                    return "redirect:signInError";
+                    UserConverter userConverter = new UserConverter();
+                    User user = userConverter.toUser(cursor.next());
+                    String name =  user.getUsername();
+                    return "redirect:signInError?name=" + name;
                 }
 
                 //Everything is OK. Write data to Mongo.
@@ -84,7 +88,11 @@ public class RegisterController {
 
    }
     @RequestMapping("/signInError")
-    public String error() {return "signInUsernameError";}
+    public String error(Model model,
+                        @RequestParam("name") String name) {
+        model.addAttribute("name", name);
+        return "signInUsernameError";
+    }
 
     public void checkUsername(String uname) {}
 
