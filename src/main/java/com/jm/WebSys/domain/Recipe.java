@@ -5,6 +5,7 @@ package com.jm.WebSys.domain;
  */
 public class Recipe {
 
+    String id;
     String rname;
     String rdesc;
     String ringredients;
@@ -16,6 +17,14 @@ public class Recipe {
     //No Arg Constructor
     public Recipe() {
 
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getRname() {

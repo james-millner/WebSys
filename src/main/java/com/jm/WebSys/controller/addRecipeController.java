@@ -1,7 +1,9 @@
 package com.jm.WebSys.controller;
 
 //Importing spring framework
+import com.jm.WebSys.DAO.MongoDBRecipeDAO;
 import com.jm.WebSys.domain.Recipe;
+import com.mongodb.MongoClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,6 +22,11 @@ public class addRecipeController {
     public String add(Model model,
                       @RequestParam("name") String name,
                       Recipe recipe) {
+        model.addAttribute("name", name);
+
+        if(recipe.getRname() == null ){
+            return "addRecipe";
+        }
 
         System.out.println(recipe.getRname());
         System.out.println(recipe.getRdesc());
@@ -29,7 +36,15 @@ public class addRecipeController {
         System.out.println(recipe.getAdditional());
         recipe.setCreator(name);
 
-        model.addAttribute("name", name);
+        if (recipe.getRname() != null ) {
+            model.addAttribute("success", recipe.getRname() + " has been added!");
+        }
+
+        // Since 2.10.0, uses MongoClient
+        MongoClient mongo = new MongoClient( "localhost" , 27017 );
+        MongoDBRecipeDAO dao = new MongoDBRecipeDAO(mongo);
+        dao.createRecipe(recipe);
+
         return "addRecipe";
     }
 }

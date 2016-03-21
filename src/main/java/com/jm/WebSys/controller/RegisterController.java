@@ -2,6 +2,7 @@
 package com.jm.WebSys.controller;
 
 //Import models being used. 
+import com.jm.WebSys.DAO.MongoDBUserDAO;
 import com.jm.WebSys.converter.UserConverter;
 import com.jm.WebSys.domain.User;
 import com.jm.WebSys.domain.Encrypter;
@@ -72,14 +73,9 @@ public class RegisterController {
                     return "redirect:signInError?name=" + name;
                 }
 
-                //Everything is OK. Write data to Mongo.
-                BasicDBObject document = new BasicDBObject();
-                document.put("fname", userDetails.getFname());
-                document.put("sname", userDetails.getSname());
-                document.put("username", userDetails.getUsername());
-                document.put("password", ecPass);
-                document.put("dob", userDetails.getDob());
-                table.insert(document);
+                userDetails.setPassword(ecPass);
+                MongoDBUserDAO dao = new MongoDBUserDAO(mongo);
+                dao.createUser(userDetails);
 
                 System.out.println(ec.decrypt());
                 return "redirect:signin";

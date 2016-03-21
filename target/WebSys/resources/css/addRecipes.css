@@ -1,0 +1,26 @@
+label {
+    color: white;
+}
+textarea {
+    padding: 0 0 350px 0;
+}
+
+#welcome {
+    height: 400px;
+    background-image: url("/resources/images/prep.jpg");
+}
+
+#intro {
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Lobster', sans-serif;
+    font-size: 32px;
+    text-shadow: 2px 4px 10px #000;
+}
+
+#content {
+    border-radius: 25px;
+    background: #3b3a3c;
+    padding: 20px;
+}
+
