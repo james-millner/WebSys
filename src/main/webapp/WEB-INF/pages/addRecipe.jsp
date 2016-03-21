@@ -79,23 +79,23 @@
         <div class="col-md-6">
           <div class="input-group">
             <label id="namelbl">Recipe Name: </label>
-            <input type="text" id="recipeName" class="form-control" name="recipename" required/>
+            <input type="text" id="recipeName" class="form-control" name="rname" required/>
           </div>
           <div class="input-group">
             <label id="desclbl">Description: </label>
-            <textarea type="text" id="description" class="form-control" name="description" required style="width: 400px; height: 75px"></textarea>
+            <textarea type="text" id="description" class="form-control" name="rdesc" required style="width: 400px; height: 75px"></textarea>
           </div>
           <div class="input-group">
             <label id="itemslbl">Ingredients: </label>
-            <textarea type="text" id="ingredients" class="form-control" name="ingredients" placeholder="Please enter one ingredient per line." required style="width: 400px; height: 150px"></textarea>
+            <textarea type="text" id="ingredients" class="form-control" name="ringredients" placeholder="Please enter one ingredient per line." required style="width: 400px; height: 150px"></textarea>
           </div>
         </div>
         <div class="col-md-6">
           <label>Time to Prep: </label>
-          <p>Hours: &nbsp <input type="number" name="hours" min="0" max="12" style="color: black"/>  <p> Minutes: &nbsp <input type="number" name="hours" min="0" max="12" style="color: black"/> </p> </p>
+          <p>Hours: &nbsp <input type="number" name="rhours" min="0" max="12" style="color: black"/>  <p> Minutes: &nbsp <input type="number" name="rmins" min="0" max="60" style="color: black"/> </p> </p>
           <div class="input-group">
             <label id="extralbl">Additional Information: </label>
-            <textarea type="text" id="additionalInfo" class="form-control" name="additionalInfo" placeholder="Please enter any additional information." required style="width: 400px; height: 150px"></textarea>
+            <textarea type="text" id="additionalInfo" class="form-control" name="additional" placeholder="Please enter any additional information." required style="width: 400px; height: 150px"></textarea>
           </div>
           <div class="input-group" style="padding-top: 5px">
             <button class="btn btn-warning " type="submit">Add Recipe!</button>

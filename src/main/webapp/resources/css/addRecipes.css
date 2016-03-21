@@ -1,6 +1,10 @@
 label {
     color: white;
 }
+textarea {
+    padding: 0 0 350px 0;
+}
+
 #welcome {
     height: 400px;
     background-image: url("/resources/images/prep.jpg");
