@@ -22,7 +22,8 @@ public class RecipeConverter {
                 .append("ringredients", r.getRingredients())
                 .append("rhours", r.getRhours())
                 .append("rmins", r.getRmins())
-                .append("radditional", r.getAdditional());
+                .append("radditional", r.getAdditional())
+                .append("creator", r.getCreator());
 
         //If the object already has an ID, search via that ID as well.
         if(r.getId() != null) {
@@ -41,6 +42,7 @@ public class RecipeConverter {
         r.setRhours((Integer) obj.get("rhours"));
         r.setRmins((Integer) obj.get("rmins"));
         r.setAdditional((String) obj.get("radditional"));
+        r.setCreator((String) obj.get("creator"));
         return r;
     }
 }
