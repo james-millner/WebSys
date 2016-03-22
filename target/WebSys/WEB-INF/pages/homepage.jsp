@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,15 +71,12 @@
     </div>
   </div>
   <div id="content" class="container-fluid">
-    <div class="row-fluid">
-      <div id="menu" class="col-md-3">
-        <!--Sidebar content-->
-        SIDE
-      </div>
-      <div id="body" class="col-md-9">
-        <!--Body content-->
-        BODY
-      </div>
+       <div id="menu" class="col-md-12">
+        <c:forEach var="recipe" items="${recipes}">
+          <div id="recipe" class="container-fluid">
+            <p id="rname">${recipe.rname}</p>
+          </div>
+        </c:forEach>
     </div>
   </div>
 

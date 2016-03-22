@@ -40,7 +40,24 @@ p {
 }
 
 #content{
-    padding-top: 10px;
-    max-width: 950px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 8px 8px 10px #888888;
+    background: linear-gradient(-45deg, #888888, #f2f2f2, #888888);
+    padding: 20px;
+    max-width: 1170px;
 }
 
+#recipe {
+    margin-top: 10px;
+    border-radius: 25px;
+    background: azure;
+    border: 2px solid black;
+    padding: 20px;
+}
+
+#rname {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 20px;
+    color: black;
+}

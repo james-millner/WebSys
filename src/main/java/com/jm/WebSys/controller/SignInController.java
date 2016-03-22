@@ -59,8 +59,8 @@ public class SignInController {
     	}
 
     	System.out.println("not recognised");
-
-			model.addAttribute("error", "Username or password incorrect. Please try again.");
+		model.addAttribute("error", "Username or password incorrect. Please try again.");
+		mongo.close();
 
     	return "signIn";
     	}

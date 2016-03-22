@@ -6,8 +6,6 @@ import com.jm.WebSys.domain.Recipe;
 import com.mongodb.MongoClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -33,8 +31,9 @@ public class addRecipeController {
         System.out.println(recipe.getRingredients());
         System.out.println(recipe.getRhours());
         System.out.println(recipe.getRmins());
-        System.out.println(recipe.getAdditional());
+        System.out.println(recipe.getRmethod());
         recipe.setCreator(name);
+        recipe.setViews(0);
 
         if (recipe.getRname() != null ) {
             model.addAttribute("success", recipe.getRname() + " has been added!");
@@ -44,6 +43,7 @@ public class addRecipeController {
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBRecipeDAO dao = new MongoDBRecipeDAO(mongo);
         dao.createRecipe(recipe);
+        mongo.close();
 
         return "addRecipe";
     }

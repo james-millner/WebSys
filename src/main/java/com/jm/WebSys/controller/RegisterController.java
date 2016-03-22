@@ -76,6 +76,7 @@ public class RegisterController {
                 userDetails.setPassword(ecPass);
                 MongoDBUserDAO dao = new MongoDBUserDAO(mongo);
                 dao.createUser(userDetails);
+                mongo.close();
 
                 System.out.println(ec.decrypt());
                 return "redirect:signin";
