@@ -13,6 +13,9 @@ import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import org.bson.types.ObjectId;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by James on 06/03/2016.
  */
@@ -31,4 +34,16 @@ public class MongoDBRecipeDAO {
         r.setId(id.toString());
         return r;
     }
+
+    public List<Recipe> getRecipes() {
+        List<Recipe> recipes = new ArrayList<Recipe>();
+        DBCursor cursor = db.find();
+        while(cursor.hasNext()) {
+            DBObject object = cursor.next();
+            Recipe recipe = RecipeConverter.toRecipe(object);
+            recipes.add(recipe);
+        }
+        return recipes;
+    }
+
 }

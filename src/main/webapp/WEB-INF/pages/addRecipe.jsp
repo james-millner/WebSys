@@ -94,8 +94,8 @@
           <label>Time to Prep: </label>
           <p>Hours: &nbsp <input type="number" name="rhours" min="0" max="12" style="color: black"/>  <p> Minutes: &nbsp <input type="number" name="rmins" min="0" max="60" style="color: black"/> </p> </p>
           <div class="input-group">
-            <label id="extralbl">Additional Information: </label>
-            <textarea type="text" id="additionalInfo" class="form-control" name="additional" placeholder="Please enter any additional information." style="width: 400px; height: 150px"></textarea>
+            <label id="methodlbl">Method: </label>
+            <textarea type="text" id="method" class="form-control" name="rmethod" placeholder="Enter the method, separated in steps per line." style="width: 400px; height: 150px"></textarea>
           </div>
           <div class="input-group" style="padding-top: 5px">
             <button class="btn btn-warning " type="submit">Add Recipe!</button>

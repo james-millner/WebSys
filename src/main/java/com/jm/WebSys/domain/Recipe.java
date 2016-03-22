@@ -11,14 +11,17 @@ public class Recipe {
     String ringredients;
     int rhours;
     int rmins;
-    String additional;
+    String rmethod;
     String creator;
+    int views;
+
 
     //No Arg Constructor
     public Recipe() {
 
     }
 
+    //Get and Set Methods
     public String getId() {
         return id;
     }
@@ -67,12 +70,12 @@ public class Recipe {
         this.rmins = rmins;
     }
 
-    public String getAdditional() {
-        return additional;
+    public String getRmethod() {
+        return rmethod;
     }
 
-    public void setAdditional(String additional) {
-        this.additional = additional;
+    public void setRmethod(String rmethod) {
+        this.rmethod = rmethod;
     }
 
     public String getCreator() {
@@ -81,5 +84,13 @@ public class Recipe {
 
     public void setCreator(String creator) {
         this.creator = creator;
+    }
+
+    public int getViews() {
+        return views;
+    }
+
+    public void setViews(int views) {
+        this.views = views;
     }
 }
