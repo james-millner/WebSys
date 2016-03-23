@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
 @import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Muli);
+@import url(https://fonts.googleapis.com/css?family=Rambla);
 
 body {
     padding-top: 10px;
@@ -20,14 +22,21 @@ h2{
 }
 
 p {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 20px;
+    font-family: 'Rambla', sans-serif;
+    font-size: 14px;
     color: azure;
+}
+
+#header {
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 #welcome {
     height: 400px;
     background-image: url("/resources/images/welcomeImage.jpg");
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 #welcometxt {
@@ -43,21 +52,52 @@ p {
     margin-top: 10px;
     border-radius: 10px;
     box-shadow: 8px 8px 10px #888888;
-    background: linear-gradient(-45deg, #888888, #f2f2f2, #888888);
+    background: #d9d9d9;
     padding: 20px;
-    max-width: 1170px;
+    max-width: 1200px;
 }
 
+/* Styles for reports */
+#menu {
+
+}
+
+/* Styles for each generated recipe. */
 #recipe {
-    margin-top: 10px;
-    border-radius: 25px;
-    background: azure;
-    border: 2px solid black;
-    padding: 20px;
+    border: 4px outset;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    background: #f2f2f2;
 }
 
+#dcreator {
+    border-right: 2px outset;
+}
+
+#ddesc {
+    border-right: 2px outset;;
+}
+
+#dviews {
+    border-right: 2px outset;
+}
+
+/* Styles for Data */
 #rname {
+    font-family: 'Rambla', sans-serif;
+    font-size: 25px;
+    color: black;
+    border-bottom: 1px outset;
+}
+
+#ring {
     font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 20px;
+    font-size: 10px;
+    color: black;
+}
+
+#rcreator {
+    font-family: 'Muli', sans-serif;
+    font-size: 10px;
     color: black;
 }

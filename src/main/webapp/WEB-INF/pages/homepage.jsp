@@ -26,7 +26,7 @@
 
 </head>
   <body>
-  <div class="row" align="center">
+  <div id="header" class="row" align="center">
       <div class="container" style="max-width: 1650px;" align="center">
       <nav class="navbar navbar-default" >
         <div class="container-fluid">
@@ -59,7 +59,7 @@
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <a class="navbar-brand" href="#">User: ${name}</a>
+              <a class="navbar-brand">User: ${name}</a>
               <li><a href="/signin">Logout.</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -71,10 +71,37 @@
     </div>
   </div>
   <div id="content" class="container-fluid">
-       <div id="menu" class="col-md-12">
+      <div id="menu" class="col-md-2" align="center">
+        <ul class="nav nav-pills nav-stacked">
+          <li role="presentation"><a href="#">Most Viewed!</a></li>
+          <li role="presentation"><a href="#">Most Recent!</a></li>
+        </ul>
+      </div>
+       <div id="recipes" class="col-md-10">
         <c:forEach var="recipe" items="${recipes}">
-          <div id="recipe" class="container-fluid">
-            <p id="rname">${recipe.rname}</p>
+          <div id="recipe" class="row">
+            <div id="dname" class="col-xs-12">
+              <p id="rname">${recipe.rname}</p>
+            </div>
+            <div id="dcreator" class="col-xs-1">
+              <p style="color: black"><b>Created By:</b><br>${recipe.creator}</p>
+            </div>
+            <div id="ddesc" class="col-xs-5">
+              <p style="color: black"><b>Description: </b><br>${recipe.rdesc}</p>
+            </div>
+            <div id="dtime" class="col-xs-6">
+              <div class="col-xs-3" align="center">
+                <span class="glyphicon glyphicon-time" aria-hidden="true"></span> <p style="color: black">${recipe.rhours} H<br>${recipe.rmins} M</p>
+              </div>
+              <div id="dviews" class="col-xs-2">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <p style="color: black">${recipe.views}</p>
+              </div>
+              <div class="col-xs-7">
+                <div class="btn-group btn-group-md" role="group">
+                  <button type="button" class="btn btn-default" style="width: 245px">View</button>
+                </div>
+              </div>
+            </div>
           </div>
         </c:forEach>
     </div>
