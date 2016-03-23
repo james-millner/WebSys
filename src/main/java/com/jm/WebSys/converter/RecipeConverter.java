@@ -6,6 +6,8 @@ import com.mongodb.DBObject;
 
 import org.bson.types.ObjectId;
 
+import java.util.Date;
+
 /**
  * Created by James on 06/03/2016.
  *
@@ -22,7 +24,8 @@ public class RecipeConverter {
                 .append("rmins", r.getRmins())
                 .append("radditional", r.getRmethod())
                 .append("creator", r.getCreator())
-                .append("views", r.getViews());
+                .append("views", r.getViews())
+                .append("timestamp", r.getTimecreated());
 
         //If the object already has an ID, search via that ID as well.
         if(r.getId() != null) {
@@ -43,6 +46,7 @@ public class RecipeConverter {
         r.setRmethod((String) obj.get("radditional"));
         r.setCreator((String) obj.get("creator"));
         r.setViews((Integer) obj.get("views"));
+        r.setTimecreated((Date) obj.get("timestamp"));
         return r;
     }
 }

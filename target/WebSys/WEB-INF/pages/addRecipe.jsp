@@ -91,22 +91,39 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="container">
+          <div class="col-md-4">
+            <label>Type: </label>
+            <select multiple class="form-control" id="foodtype" name="ftype" style="width: 150px" style="height: 175px">
+              <option>American</option>
+              <option>British</option>
+              <option>Caribbean</option>
+              <option>Chinese</option>
+              <option>Eastern European</option>
+              <option>French</option>
+              <option>Indian</option>
+              <option>Italian</option>
+              <option>Mexican</option>
+              <option>Spanish</option>
+              <option>Thai</option>
+            </select>
+          </div>
+          <div class="col-md-6">
           <label>Time to Prep: </label>
           <p>Hours: &nbsp <input type="number" name="rhours" min="0" max="12" style="color: black"/>  <p> Minutes: &nbsp <input type="number" name="rmins" min="0" max="60" style="color: black"/> </p> </p>
+          </div>
+          <div class="col-md-12">
             <label id="methodlbl">Method: </label>
             <div class="input-group">
-            <textarea type="text" id="method" class="form-control" name="rmethod" placeholder="Enter the method, separated in steps per line." style="width: 400px; height: 150px"></textarea>
+              <textarea type="text" id="method" class="form-control" name="rmethod" placeholder="Enter the method, separated in steps per line." style="width: 400px; height: 150px"></textarea>
+              <
           </div>
           <div class="input-group" style="padding-top: 5px">
-            <button class="btn btn-warning " type="submit">Add Recipe!</button>
+            <button class="btn btn-warning " type="submit">Add Recipe!</button> <p>${success}</p>
           </div>
         </div>
 
       </div>
     </div>
-    <div class="container" align="center">
-      <p>${success}</p>
     </div>
   </form>
 
