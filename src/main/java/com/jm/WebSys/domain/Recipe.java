@@ -17,8 +17,7 @@ public class Recipe {
     String creator;
     int views;
     Date timecreated;
-
-
+    String ftype;
 
     //No Arg Constructor
     public Recipe() {
@@ -106,5 +105,11 @@ public class Recipe {
         this.timecreated = timecreated;
     }
 
+    public String getFtype() {
+        return ftype;
+    }
 
+    public void setFtype(String ftype) {
+        this.ftype = ftype;
+    }
 }

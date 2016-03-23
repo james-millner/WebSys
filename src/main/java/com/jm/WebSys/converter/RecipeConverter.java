@@ -25,7 +25,8 @@ public class RecipeConverter {
                 .append("radditional", r.getRmethod())
                 .append("creator", r.getCreator())
                 .append("views", r.getViews())
-                .append("timestamp", r.getTimecreated());
+                .append("timestamp", r.getTimecreated())
+                .append("ftype", r.getFtype());
 
         //If the object already has an ID, search via that ID as well.
         if(r.getId() != null) {
@@ -47,6 +48,7 @@ public class RecipeConverter {
         r.setCreator((String) obj.get("creator"));
         r.setViews((Integer) obj.get("views"));
         r.setTimecreated((Date) obj.get("timestamp"));
+        r.setFtype((String) obj.get("ftype"));
         return r;
     }
 }
