@@ -91,6 +91,22 @@
           </div>
         </div>
         <div class="col-md-6">
+          <div class="col-md-4">
+            <label>Type: </label>
+            <select multiple class="form-control" id="foodtype" name="ftype" style="width: 150px" style="height: 175px">
+              <option>American</option>
+              <option>British</option>
+              <option>Caribbean</option>
+              <option>Chinese</option>
+              <option>Eastern European</option>
+              <option>French</option>
+              <option>Indian</option>
+              <option>Italian</option>
+              <option>Mexican</option>
+              <option>Spanish</option>
+              <option>Thai</option>
+            </select>
+          </div>
           <div class="col-md-6">
           <label>Time to Prep: </label>
           <p>Hours: &nbsp <input type="number" name="rhours" min="0" max="12" style="color: black"/>  <p> Minutes: &nbsp <input type="number" name="rmins" min="0" max="60" style="color: black"/> </p> </p>

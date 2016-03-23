@@ -6,18 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd2cdba3-6454-4445-ae84-1c6807d8ee85" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/WebSys/WEB-INF/classes/com/jm/WebSys/controller/addRecipeController.class" afterPath="$PROJECT_DIR$/target/WebSys/WEB-INF/classes/com/jm/WebSys/controller/addRecipeController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/WebSys/WEB-INF/classes/com/jm/WebSys/converter/RecipeConverter.class" afterPath="$PROJECT_DIR$/target/WebSys/WEB-INF/classes/com/jm/WebSys/converter/RecipeConverter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/WebSys/WEB-INF/classes/com/jm/WebSys/domain/Recipe.class" afterPath="$PROJECT_DIR$/target/WebSys/WEB-INF/classes/com/jm/WebSys/domain/Recipe.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/jm/WebSys/controller/addRecipeController.class" afterPath="$PROJECT_DIR$/target/classes/com/jm/WebSys/controller/addRecipeController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/jm/WebSys/converter/RecipeConverter.class" afterPath="$PROJECT_DIR$/target/classes/com/jm/WebSys/converter/RecipeConverter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/jm/WebSys/domain/Recipe.class" afterPath="$PROJECT_DIR$/target/classes/com/jm/WebSys/domain/Recipe.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jm/WebSys/controller/addRecipeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/jm/WebSys/controller/addRecipeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jm/WebSys/converter/RecipeConverter.java" afterPath="$PROJECT_DIR$/src/main/java/com/jm/WebSys/converter/RecipeConverter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jm/WebSys/domain/Recipe.java" afterPath="$PROJECT_DIR$/src/main/java/com/jm/WebSys/domain/Recipe.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addRecipe.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addRecipe.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/WebSys/WEB-INF/pages/addRecipe.jsp" afterPath="$PROJECT_DIR$/target/WebSys/WEB-INF/pages/addRecipe.jsp" />
     </list>
     <ignored path="InventorySystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,8 +73,8 @@
       <file leaf-file-name="addRecipe.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addRecipe.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14705883">
-              <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.7352941">
+              <caret line="106" column="35" selection-start-line="106" selection-start-column="35" selection-end-line="106" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -1249,7 +1239,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157076000" />
+    <option name="totallyTimeSpent" value="157107000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1694,8 +1684,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addRecipe.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14705883">
-          <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.7352941">
+          <caret line="106" column="35" selection-start-line="106" selection-start-column="35" selection-end-line="106" selection-end-column="35" />
           <folding />
         </state>
       </provider>
