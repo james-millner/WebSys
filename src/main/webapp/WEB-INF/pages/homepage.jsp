@@ -98,7 +98,7 @@
               </div>
               <div class="col-xs-7">
                 <div class="btn-group btn-group-md" role="group">
-                  <button type="button" class="btn btn-default" style="width: 245px">View</button>
+                  <button type="button" class="btn btn-default" style="width: 215px">View</button>
                 </div>
               </div>
             </div>

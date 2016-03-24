@@ -32,7 +32,7 @@ public class HomeController {
         System.out.println(recipes.size());
         //Adds all recipes to the model to output in the view.
         model.addAttribute("recipes", recipes);
-
+        mongo.close();
         return "homepage";
     }
 

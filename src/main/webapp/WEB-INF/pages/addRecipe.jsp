@@ -107,14 +107,21 @@
               <option>Thai</option>
             </select>
           </div>
-          <div class="col-md-6">
-          <label>Time to Prep: </label>
-          <p>Hours: &nbsp <input type="number" name="rhours" min="0" max="12" style="color: black"/>  <p> Minutes: &nbsp <input type="number" name="rmins" min="0" max="60" style="color: black"/> </p> </p>
+          <div class="col-md-8">
+            <div class="col-md-12">
+              <label>Time to Prep: </label>
+            </div>
+            <div class="col-md-6">
+              <p>Hours: &nbsp <input type="number" name="rhours" min="0" max="12" style="color: black"/> </p>
+            </div>
+            <div class="col-md-6">
+              <p> Minutes: &nbsp <input type="number" name="rmins" min="0" max="60" style="color: black"/> </p>
+            </div>
           </div>
           <div class="col-md-12">
             <label id="methodlbl">Method: </label>
             <div class="input-group">
-              <textarea type="text" id="method" class="form-control" name="rmethod" placeholder="Enter the method, separated in steps per line." style="width: 400px; height: 150px"></textarea>
+              <textarea type="text" id="method" class="form-control" name="rmethod" placeholder="Enter the method, separated in steps per line." style="width: 500px; height: 150px"></textarea>
               <
           </div>
           <div class="input-group" style="padding-top: 5px">
