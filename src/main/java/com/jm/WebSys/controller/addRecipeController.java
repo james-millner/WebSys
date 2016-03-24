@@ -9,6 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by James on 17/03/2016.
  */
@@ -34,6 +38,10 @@ public class addRecipeController {
         System.out.println(recipe.getRmethod());
         recipe.setCreator(name);
         recipe.setViews(0);
+
+        //get current date time with Date()
+        Date date = new Date();
+        recipe.setTimecreated(date);
 
         if (recipe.getRname() != null ) {
             model.addAttribute("success", recipe.getRname() + " has been added!");

@@ -1,5 +1,7 @@
 package com.jm.WebSys.domain;
 
+import java.util.Date;
+
 /**
  * Created by James on 21/03/2016.
  */
@@ -14,7 +16,8 @@ public class Recipe {
     String rmethod;
     String creator;
     int views;
-
+    Date timecreated;
+    String ftype;
 
     //No Arg Constructor
     public Recipe() {
@@ -92,5 +95,21 @@ public class Recipe {
 
     public void setViews(int views) {
         this.views = views;
+    }
+
+    public Date getTimecreated() {
+        return timecreated;
+    }
+
+    public void setTimecreated(Date timecreated) {
+        this.timecreated = timecreated;
+    }
+
+    public String getFtype() {
+        return ftype;
+    }
+
+    public void setFtype(String ftype) {
+        this.ftype = ftype;
     }
 }
