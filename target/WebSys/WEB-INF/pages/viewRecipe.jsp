@@ -1,5 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +11,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Homepage</title>
+    <title>View!</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
@@ -67,44 +66,9 @@
         </div><!-- /.container-fluid -->
       </nav>
     </div>
-    <div id="welcome" class="row">
-      <p id="welcometxt">The Recipe Book!</p>
-    </div>
   </div>
   <div id="content" class="container-fluid">
-      <div id="menu" class="col-md-2" align="center">
-        <ul class="nav nav-pills nav-stacked">
-          <li role="presentation"><a href="#">Most Viewed!</a></li>
-          <li role="presentation"><a href="#">Most Recent!</a></li>
-        </ul>
-      </div>
-       <div id="recipes" class="col-md-10">
-        <c:forEach var="recipe" items="${recipes}">
-          <c:url value="/viewRecipe?_id=${recipe.id}&name=${name}" var="viewRecipe"></c:url>
-          <div id="recipe" class="row">
-            <div id="dname" class="col-xs-12">
-              <p id="rname">${recipe.rname}</p>
-            </div>
-            <div id="dcreator" class="col-xs-1">
-              <p style="color: black"><b>Created By:</b><br>${recipe.creator}</p>
-            </div>
-            <div id="ddesc" class="col-xs-5">
-              <p style="color: black"><b>Description: </b><br>${recipe.rdesc}</p>
-            </div>
-            <div id="dtime" class="col-xs-6">
-              <div class="col-xs-3" align="center">
-                <span class="glyphicon glyphicon-time" aria-hidden="true"></span> <p style="color: black">${recipe.rhours} H<br>${recipe.rmins} M</p>
-              </div>
-              <div id="dviews" class="col-xs-2">
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <p style="color: black">${recipe.views}</p>
-              </div>
-              <div class="col-xs-7">
-                <a style="width: 215px" href='<c:out value="${viewRecipe}"></c:out>'> View</a>
-              </div>
-            </div>
-          </div>
-        </c:forEach>
-    </div>
+      BLOCK
   </div>
 
   </body>

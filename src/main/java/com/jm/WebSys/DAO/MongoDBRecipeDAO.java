@@ -46,4 +46,9 @@ public class MongoDBRecipeDAO {
         return recipes;
     }
 
+    public Recipe getRecipe(Recipe recipe) {
+        DBObject query = BasicDBObjectBuilder.start().append("_id", new ObjectId(recipe.getId())).get();
+        DBObject result = this.db.findOne(query);
+        return RecipeConverter.toRecipe(result);
+    }
 }

@@ -39,6 +39,7 @@ public class RecipeConverter {
     public static Recipe toRecipe(DBObject obj) {
         Recipe r = new Recipe();
         ObjectId id = (ObjectId) obj.get("_id");
+        r.setId(id.toString());
         r.setRname((String) obj.get("rname"));
         r.setRdesc((String) obj.get("rdesc"));
         r.setRingredients((String) obj.get("ringredients"));

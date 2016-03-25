@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -79,6 +80,7 @@
       </div>
        <div id="recipes" class="col-md-10">
         <c:forEach var="recipe" items="${recipes}">
+          <c:url value="/viewRecipe?_id=${recipe.id}&name=${name}" var="viewRecipe"></c:url>
           <div id="recipe" class="row">
             <div id="dname" class="col-xs-12">
               <p id="rname">${recipe.rname}</p>
@@ -97,9 +99,7 @@
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <p style="color: black">${recipe.views}</p>
               </div>
               <div class="col-xs-7">
-                <div class="btn-group btn-group-md" role="group">
-                  <button type="button" class="btn btn-default" style="width: 215px">View</button>
-                </div>
+                <a style="width: 215px" href='<c:out value="${viewRecipe}"></c:out>'> View</a>
               </div>
             </div>
           </div>
