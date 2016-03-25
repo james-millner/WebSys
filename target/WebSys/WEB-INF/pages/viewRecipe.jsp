@@ -21,7 +21,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
     <!-- Custom Styling -->
-    <link rel="stylesheet" href="/resources/css/main.css">
+    <link rel="stylesheet" href="/resources/css/view.css">
     <link rel="stylesheet" href="/resources/css/nav.css">
 
 </head>
@@ -68,7 +68,23 @@
     </div>
   </div>
   <div id="content" class="container-fluid">
-      BLOCK
+    <div class="col-lg-12" align="center">
+      <p class="lead">${recipeModel.rname}</p>
+    </div>
+    <div class="col-md-12" align="center">
+      MENU
+    </div>
+    <div class="col-lg-12" align="center">
+      <div class="col-md-3">
+        INGREDIENTS
+      </div>
+      <div class="col-md-6">
+        METHOD
+      </div>
+      <div class="col-md-3">
+        DETAILS
+      </div>
+    </div>
   </div>
 
   </body>

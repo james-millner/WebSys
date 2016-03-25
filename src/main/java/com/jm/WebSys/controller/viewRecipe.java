@@ -27,6 +27,18 @@ public class viewRecipe {
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBRecipeDAO dao = new MongoDBRecipeDAO(mongo);
 
+        //Initially add a view count to the recipe.
+        //Set up an empty recipe with the ID that has been selected.
+        Recipe r = new Recipe();
+        r.setId(id);
+
+        recipe = dao.getRecipe(r);
+        recipe.setViews(recipe.getViews() + 1);
+
+        dao.updateRecipe(recipe);
+
+        //Add the recipe on screen.
+        model.addAttribute("recipeModel", recipe);
 
         return "viewRecipe";
     }

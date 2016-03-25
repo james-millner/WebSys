@@ -51,4 +51,9 @@ public class MongoDBRecipeDAO {
         DBObject result = this.db.findOne(query);
         return RecipeConverter.toRecipe(result);
     }
+
+    public void updateRecipe(Recipe recipe) {
+        DBObject query = BasicDBObjectBuilder.start().append("_id", new ObjectId(recipe.getId())).get();
+        this.db.update(query, RecipeConverter.toDBObject(recipe));
+    }
 }

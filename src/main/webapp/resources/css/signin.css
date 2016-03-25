@@ -1,0 +1,28 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Muli);
+@import url(https://fonts.googleapis.com/css?family=Rambla);
+
+body {
+    padding-top: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    background-image: url("/resources/images/background.jpg");
+}
+
+h1 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 80px;
+    color: azure;
+}
+
+h2{
+    font-size: 40px;
+    color: azure;
+}
+
+p {
+    font-family: 'Rambla', sans-serif;
+    font-size: 14px;
+    color: azure;
+}

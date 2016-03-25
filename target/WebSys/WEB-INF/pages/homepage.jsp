@@ -67,7 +67,7 @@
         </div><!-- /.container-fluid -->
       </nav>
     </div>
-    <div id="welcome" class="row">
+    <div id="welcome" class="well">
       <p id="welcometxt">The Recipe Book!</p>
     </div>
   </div>
