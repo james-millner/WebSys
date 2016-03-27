@@ -76,13 +76,13 @@
     </div>
     <div class="col-lg-12" align="center">
       <div class="col-md-3">
-        INGREDIENTS
+        ${recipeModel.ringredients}
       </div>
       <div class="col-md-6">
-        METHOD
+        ${METHOD}
       </div>
       <div class="col-md-3">
-        DETAILS
+        ${recipeModel.timecreated}
       </div>
     </div>
   </div>

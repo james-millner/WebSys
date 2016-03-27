@@ -7,7 +7,7 @@ body {
     padding-top: 10px;
     padding-left: 2px;
     padding-right: 2px;
-    background-image: url("/resources/images/background.jpg");
+    background: linear-gradient(to right, #212224 , #3b2312, #212224);
 }
 
 h1 {

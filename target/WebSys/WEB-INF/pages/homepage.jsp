@@ -71,14 +71,15 @@
       <p id="welcometxt">The Recipe Book!</p>
     </div>
   </div>
+  <div id="reports" class="container-fluid" align="center">
+    <ol class="breadcrumb">
+      <li class="active"><a href="#">Recent Recipes</a></li>
+      <li><a href="#">Top Recipes.</a></li>
+      <li><a href="#">Search.</a></li>
+    </ol>
+  </div>
   <div id="content" class="container-fluid">
-      <div id="menu" class="col-md-2" align="center">
-        <ul class="nav nav-pills nav-stacked">
-          <li role="presentation"><a href="#">Most Viewed!</a></li>
-          <li role="presentation"><a href="#">Most Recent!</a></li>
-        </ul>
-      </div>
-       <div id="recipes" class="col-md-10">
+       <div id="recipes" class="col-md-12">
         <c:forEach var="recipe" items="${recipes}">
           <c:url value="/viewRecipe?_id=${recipe.id}&name=${name}" var="viewRecipe"></c:url>
           <div id="recipe" class="row">
@@ -86,19 +87,22 @@
               <p id="rname">${recipe.rname}</p>
             </div>
             <div id="dcreator" class="col-xs-1">
-              <p style="color: black"><b>Created By:</b><br>${recipe.creator}</p>
+              <p id="rcreator"><b>Created By:</b><br>${recipe.creator}</p>
             </div>
             <div id="ddesc" class="col-xs-5">
-              <p style="color: black"><b>Description: </b><br>${recipe.rdesc}</p>
+              <p><b>Description: </b><br>${recipe.rdesc}</p>
             </div>
             <div id="dtime" class="col-xs-6">
-              <div class="col-xs-3" align="center">
-                <span class="glyphicon glyphicon-time" aria-hidden="true"></span> <p style="color: black">${recipe.rhours} H<br>${recipe.rmins} M</p>
+              <div id="dtarea" class="col-xs-2" align="center">
+                <span class="glyphicon glyphicon-time" style="color: azure" aria-hidden="true"></span> <p>${recipe.rhours} H<br>${recipe.rmins} M</p>
               </div>
               <div id="dviews" class="col-xs-2">
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <p style="color: black">${recipe.views}</p>
+                <span class="glyphicon glyphicon-user" style="color: azure" aria-hidden="true"></span> <p>${recipe.views}</p>
               </div>
-              <div class="col-xs-7">
+              <div id="dtype" class="col-xs-2" align="center">
+                <span class="glyphicon glyphicon-menu-down" style="color: azure" aria-hidden="true"> <p>${recipe.ftype}</p></span>
+              </div>
+              <div class="col-xs-4">
                 <a style="width: 215px" href='<c:out value="${viewRecipe}"></c:out>'> View</a>
               </div>
             </div>

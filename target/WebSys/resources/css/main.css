@@ -2,6 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lobster);
 @import url(https://fonts.googleapis.com/css?family=Muli);
 @import url(https://fonts.googleapis.com/css?family=Rambla);
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
 
 body {
     padding-top: 10px;
@@ -22,7 +23,7 @@ h2{
 }
 
 p {
-    font-family: 'Rambla', sans-serif;
+    font-family: 'Poiret One', sans-serif;
     font-size: 14px;
     color: azure;
 }
@@ -52,27 +53,39 @@ p {
 #content{
     margin-top: 10px;
     border-radius: 10px;
-    box-shadow: 8px 8px 10px #3b3a3c;
-    background: #d9d9d9;
+    background: #3b3a3c;
     padding: 20px;
     max-width: 1100px;
 }
 
-/* Styles for reports */
-#menu {
-
+.breadcrumb {
+    background-color: #3b3a3c;
+    margin-bottom: 0px;
+    max-width: 800px;
 }
+
+.breadcrumb li {
+    font-size: 26px;
+    border-radius: 15px 50px 30px;
+}
+.breadcrumb a {color: rgba(255, 255, 255, 1);}
+.breadcrumb a:hover {color: rgba(122, 122, 122, 1);}
+.breadcrumb>.active {color: rgba(199, 106, 30, 1);}
+.breadcrumb>li+li:before {color: rgba(204, 204, 204, 1);}
 
 /* Styles for each generated recipe. */
 #recipe {
-    border: 4px outset;
-    padding-left: 10px;
+    border: 10px solid transparent;
+    padding: 15px;
+    border-image: url(/resources/images/border.png) 20 stretch;
     margin-bottom: 25px;
-    background: #f2f2f2;
+    background-color: transparent;
 }
 
 #dcreator {
     border-right: 2px outset;
+    font-size: 12px;
+    padding-left: 10px;
 }
 
 #ddesc {
@@ -80,14 +93,26 @@ p {
 }
 
 #dviews {
+    padding-left: 15px;
+    padding-right: 0px;
+}
+
+#dtarea{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#dtype {
     border-right: 2px outset;
+    padding-left: 0px;
 }
 
 /* Styles for Data */
 #rname {
-    font-family: 'Rambla', sans-serif;
-    font-size: 25px;
-    color: black;
+    font-family: 'Lobster', sans-serif;
+    font-size: 40px;
+    color: azure;
+    text-shadow: 2px 8px 10px #000;
     border-bottom: 1px outset;
 }
 
@@ -98,7 +123,8 @@ p {
 }
 
 #rcreator {
-    font-family: 'Muli', sans-serif;
-    font-size: 10px;
-    color: black;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 13px;
+    color: azure;
+
 }
