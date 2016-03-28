@@ -3,13 +3,9 @@ package com.jm.WebSys.DAO;
 import com.jm.WebSys.domain.User;
 import com.jm.WebSys.converter.UserConverter;
 
-import com.mongodb.DBCollection;
-import com.mongodb.MongoClient;
+import com.mongodb.*;
 
-import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DBCollection;
-import com.mongodb.DBCursor;
-import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import org.bson.types.ObjectId;
 
@@ -30,5 +26,17 @@ public class MongoDBUserDAO {
         ObjectId id = (ObjectId) obj.get("_id");
         u.setId(id.toString());
         return u;
+    }
+
+    public User getUser(User user) {
+        String name = user.getFname();
+        DBObject query = new BasicDBObject();
+        query.put("fname", name);
+        DBCursor cursor = db.find(query);
+        while(cursor.hasNext()) {
+            DBObject obj = cursor.next();
+            user = UserConverter.toUser(obj);
+        }
+        return user;
     }
 }

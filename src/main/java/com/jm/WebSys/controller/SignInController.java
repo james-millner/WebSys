@@ -49,13 +49,16 @@ public class SignInController {
     	searchQuery.put("password", dPass);
 
     	DBCursor cursor = table.find(searchQuery);
-
-    	while (cursor.hasNext()) {
+		Encrypter disp = new Encrypter();
+    	if (cursor.hasNext()) {
     		//Success
 			UserConverter userConverter = new UserConverter();
 			User pass = userConverter.toUser(cursor.next());
 			String name =  pass.getFname();
-    		return "redirect:homepage?name=" + name;
+			disp.setString(name);
+			disp.smEncrypt();
+			String t = disp.returnString();
+    		return "redirect:homepage?name=" + t;
     	}
 
     	System.out.println("not recognised");

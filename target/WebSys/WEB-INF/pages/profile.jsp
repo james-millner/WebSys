@@ -22,7 +22,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
     <!-- Custom Styling -->
-    <link rel="stylesheet" href="/resources/css/main.css">
+    <link rel="stylesheet" href="/resources/css/pf.css">
     <link rel="stylesheet" href="/resources/css/nav.css">
 
 </head>
@@ -44,17 +44,16 @@
           <!-- Nav links, forms, and other content-->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li><a href="/homepage?name=${name}">Home <span class="sr-only">(current)</span></a></li>
-              <li class="active"><a href="/profile?name=${name}">Profile</a></li>
+              <li><a href="/homepage?name=${ecLink}">Home <span class="sr-only">(current)</span></a></li>
+              <li class="active"><a href="/profile?name=${ecLink}">Profile</a></li>
               <li class="dropdown-a">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipes! <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="/addRecipe?name=${name}">Add Recipe!</a></li>
+                  <li><a href="/addRecipe?name=${ecLink}">Add Recipe!</a></li>
                 </ul>
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <a class="navbar-brand">User: ${name}</a>
               <li><a href="/signin">Logout.</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -62,7 +61,8 @@
       </nav>
     </div>
     <div id="welcome" class="well">
-      <p id="welcometxt">The Recipe Book!</p>
+      <p id="welcometxt">Profile Page</p>
+      <p>${user.fname}</p>
     </div>
   </div>
   <div id="content" class="container-fluid">

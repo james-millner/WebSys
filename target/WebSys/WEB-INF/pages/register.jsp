@@ -46,7 +46,7 @@
 		</div>
 		<div class="form-group input-group-sm">
 			<p>Password: </p>
-  			<input type="text" style="width: 300px" id="inputPassword" class="form-control" placeholder="8 to 16 Characters." name="password" required/>
+  			<input type="password" style="width: 300px" id="inputPassword" class="form-control" placeholder="8 to 16 Characters." name="password" required/>
   		</div>
 		<div class="form-group">
         <button class="btn btn-warning btn-block" style="width: 100px" type="submit">Register</button>

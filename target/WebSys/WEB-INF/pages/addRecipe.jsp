@@ -43,8 +43,8 @@
           <!-- Nav links, forms, and other content-->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li><a href="/homepage?name=${name}">Home <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">Profile</a></li>
+              <li><a href="/homepage?name=${ecLink}">Home <span class="sr-only">(current)</span></a></li>
+              <li><a href="/profile?name=${ecLink}">Profile</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipes! <span class="caret"></span></a>
                 <ul class="dropdown-menu">

@@ -44,12 +44,12 @@
           <!-- Nav links, forms, and other content-->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="/homepage?name=${name}">Home <span class="sr-only">(current)</span></a></li>
-              <li><a href="/profile?name=${name}">Profile</a></li>
+              <li class="active"><a href="/homepage?name=${ecLink}">Home <span class="sr-only">(current)</span></a></li>
+              <li><a href="/profile?name=${ecLink}">Profile</a></li>
               <li class="dropdown-a">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipes! <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="/addRecipe?name=${name}">Add Recipe!</a></li>
+                  <li><a href="/addRecipe?name=${ecLink}">Add Recipe!</a></li>
                 </ul>
               </li>
             </ul>
@@ -75,7 +75,7 @@
   <div id="content" class="container-fluid">
        <div id="recipes" class="col-md-12">
         <c:forEach var="recipe" items="${recipes}">
-          <c:url value="/viewRecipe?_id=${recipe.id}&name=${name}" var="viewRecipe"></c:url>
+          <c:url value="/viewRecipe?_id=${recipe.id}&name=${ecLink}" var="viewRecipe"></c:url>
           <div id="recipe" class="row">
             <div id="dname" class="col-xs-12">
               <p id="rname">${recipe.rname}</p>
@@ -97,7 +97,7 @@
                 <span class="glyphicon glyphicon-menu-down" style="color: azure" aria-hidden="true"> <p>${recipe.ftype}</p></span>
               </div>
               <div class="col-xs-4">
-                <a style="width: 215px" href='<c:out value="${viewRecipe}"></c:out>'> View</a>
+                <a class="btn icon-btn btn-default" style="width: 215px" href='<c:out value="${viewRecipe}"></c:out>'><span class="glyphicon btn-glyphicon glyphicon-blackboard img-circle text-muted"></span>View Recipe</a>
               </div>
             </div>
           </div>

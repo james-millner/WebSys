@@ -2,6 +2,7 @@ package com.jm.WebSys.controller;
 
 //Importing spring framework
 import com.jm.WebSys.DAO.MongoDBRecipeDAO;
+import com.jm.WebSys.domain.Encrypter;
 import com.jm.WebSys.domain.Recipe;
 import com.mongodb.MongoClient;
 import org.springframework.stereotype.Controller;
@@ -22,7 +23,12 @@ public class addRecipeController {
     public String add(Model model,
                       @RequestParam("name") String name,
                       Recipe recipe) {
-        model.addAttribute("name", name);
+        //Decrypt URL Variable
+        Encrypter e = new Encrypter(name);
+        String crypt = e.smDecrypt();
+        //Display User.
+        model.addAttribute("name", crypt);
+        model.addAttribute("ecLink", name);
 
         if(recipe.getRname() == null ){
             return "addRecipe";
@@ -34,7 +40,7 @@ public class addRecipeController {
         System.out.println(recipe.getRhours());
         System.out.println(recipe.getRmins());
         System.out.println(recipe.getRmethod());
-        recipe.setCreator(name);
+        recipe.setCreator(crypt);
         recipe.setViews(0);
 
         //get current date time with Date()

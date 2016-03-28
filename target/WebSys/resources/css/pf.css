@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Muli);
+@import url(https://fonts.googleapis.com/css?family=Rambla);
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+body {
+    padding-top: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    background: linear-gradient(to right, #212224 , #3b2312, #212224);
+}
+
+h1 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 80px;
+    color: azure;
+}
+
+h2{
+    font-size: 40px;
+    color: azure;
+}
+
+p {
+    font-family: 'Poiret One', sans-serif;
+    font-size: 14px;
+    color: azure;
+}
+
+#header {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#welcome {
+    height: 200px;
+    background-image: url("/resources/images/welcomeImage.jpg");
+    margin-left: 0px;
+    margin-right: 0px;
+    border-color: #3b3a3c;
+}
+
+#welcometxt {
+    text-align: left;
+    vertical-align: middle;
+    font-family: 'Lobster', sans-serif;
+    font-size: 80px;
+    text-shadow: 2px 8px 10px #000;
+    margin-left: 90px;
+    margin-top: 10px;
+
+}
+
+#content{
+    margin-top: 10px;
+    border-radius: 10px;
+    background: #3b3a3c;
+    padding: 20px;
+    max-width: 1100px;
+}
+
+

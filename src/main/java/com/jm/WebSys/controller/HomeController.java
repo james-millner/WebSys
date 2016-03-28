@@ -1,5 +1,6 @@
 package com.jm.WebSys.controller;
 
+import com.jm.WebSys.domain.Encrypter;
 import com.jm.WebSys.domain.Recipe;
 import com.jm.WebSys.DAO.MongoDBRecipeDAO;
 import com.mongodb.MongoClient;
@@ -22,8 +23,12 @@ public class HomeController {
     @RequestMapping("/homepage")
     public String home(Model model,
                        @RequestParam("name") String name) {
+        //Decrypt URL Variable
+        Encrypter e = new Encrypter(name);
+        String crypt = e.smDecrypt();
         //Display User.
-        model.addAttribute("name", name);
+        model.addAttribute("name", crypt);
+        model.addAttribute("ecLink", name);
         // Since 2.10.0, uses MongoClient.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBRecipeDAO dao = new MongoDBRecipeDAO(mongo);

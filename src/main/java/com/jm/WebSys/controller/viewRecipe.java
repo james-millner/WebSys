@@ -1,6 +1,7 @@
 package com.jm.WebSys.controller;
 
 import com.jm.WebSys.DAO.MongoDBRecipeDAO;
+import com.jm.WebSys.domain.Encrypter;
 import com.jm.WebSys.domain.Recipe;
 import com.mongodb.MongoClient;
 import org.springframework.stereotype.Controller;
@@ -20,8 +21,12 @@ public class viewRecipe {
                              @RequestParam("_id") String id,
                              @RequestParam("name") String name,
                              Recipe recipe) {
-        //Add users name
-        model.addAttribute("name", name);
+        //Decrypt URL Variable
+        Encrypter e = new Encrypter(name);
+        String crypt = e.smDecrypt();
+        //Display User.
+        model.addAttribute("name", crypt);
+        model.addAttribute("ecLink", name);
 
         // Since 2.10.0, uses MongoClient.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );

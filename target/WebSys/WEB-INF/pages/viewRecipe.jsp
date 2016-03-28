@@ -96,16 +96,16 @@
         <pre>${recipeModel.ringredients}</pre>
       </div>
       <div class="col-md-7">
-        <p style="font-size: 24px; text-shadow: 2px 8px 10px #000;""><b>Method:</b></p>
+        <p style="font-size: 24px; text-shadow: 2px 8px 10px #000;"><b>Method:</b></p>
         <pre>${recipeModel.rmethod}
         </pre>
       </div>
       <div class="col-md-2" align="right">
-        <p style="font-size: 24px; text-shadow: 2px 8px 10px #000;""><b>Added On: </b></p>
+        <p style="font-size: 24px; text-shadow: 2px 8px 10px #000;"><b>Added On: </b></p>
         <p>
         ${recipeModel.timecreated}
         </p>
-        <p style="font-size: 24px; text-shadow: 2px 8px 10px #000";><b>Created By:</p>
+        <p style="font-size: 24px; text-shadow: 2px 8px 10px #000";><b>Created By:</b></p>
         <p>
           ${recipeModel.creator}
         </p>
