@@ -37,16 +37,10 @@ public class viewRecipe {
 
         dao.updateRecipe(recipe);
 
-        String ing = recipe.getRingredients();
-        int pos = 0;
-        while ((pos = ing.indexOf(".", pos)) != -1) {
-            System.out.println(ing.substring(pos));
-            pos++;
-        }
+        System.out.println(recipe.getRingredients());
 
         //Add the recipe on screen.
         model.addAttribute("recipeModel", recipe);
-
 
         return "viewRecipe";
     }

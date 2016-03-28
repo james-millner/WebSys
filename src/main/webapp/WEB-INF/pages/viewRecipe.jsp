@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,20 +70,48 @@
   </div>
   <div id="content" class="container-fluid">
     <div class="col-lg-12" align="center">
-      <p class="lead">${recipeModel.rname}</p>
-    </div>
-    <div class="col-md-12" align="center">
-      MENU
+      <p id="title">${recipeModel.rname}</p>
     </div>
     <div class="col-lg-12" align="center">
-      <div class="col-md-3">
-        ${recipeModel.ringredients}
+      <p style="font-size: 24px; text-shadow: 2px 8px 10px #000;"><b>Recipe Details:</b></p>
+    </div>
+    <div class="col-md-12" align="center">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <div class="col-sm-4">
+        <span class="glyphicon glyphicon-time" style="color: azure" aria-hidden="true"></span> <p>${recipeModel.rhours} H - ${recipeModel.rmins} M</p>
+        </div>
+        <div class="col-sm-4">
+        <span class="glyphicon glyphicon-user" style="color: azure" aria-hidden="true"></span> <p>${recipeModel.views}</p>
+        </div>
+        <div class="col-sm-4">
+        <span class="glyphicon glyphicon-menu-down" style="color: azure" aria-hidden="true"></span> <p>${recipeModel.ftype}</p>
+        </div>
       </div>
-      <div class="col-md-6">
-        ${METHOD}
+      <div class="col-sm-4"></div>
+    </div>
+    <div class="col-lg-12" align="left">
+      <div id="ing" class="col-md-3">
+        <p style="font-size: 24px; text-shadow: 2px 8px 10px #000;"><b>Ingredients:</b></p>
+        <pre>${recipeModel.ringredients}</pre>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-7">
+        <p style="font-size: 24px; text-shadow: 2px 8px 10px #000;""><b>Method:</b></p>
+        <pre>${recipeModel.rmethod}
+        </pre>
+      </div>
+      <div class="col-md-2" align="right">
+        <p style="font-size: 24px; text-shadow: 2px 8px 10px #000;""><b>Added On: </b></p>
+        <p>
         ${recipeModel.timecreated}
+        </p>
+        <p style="font-size: 24px; text-shadow: 2px 8px 10px #000";><b>Created By:</p>
+        <p>
+          ${recipeModel.creator}
+        </p>
+      </div>
+      <div class="col-md-9">
+        COMMENTS
       </div>
     </div>
   </div>
