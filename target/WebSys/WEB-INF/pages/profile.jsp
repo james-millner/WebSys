@@ -62,11 +62,16 @@
     </div>
     <div id="welcome" class="well">
       <p id="welcometxt">Profile Page</p>
-      <p>${user.fname}</p>
     </div>
   </div>
   <div id="content" class="container-fluid">
-       Profile
+    <div id="jumbo" class="jumbotron">
+      <h1>User Details</h1>
+    </div>
+    <div class="container-fluid">
+      <label>Name.</label>
+      <p>First: ${user.fname}</p>
+    </div>
   </div>
 
   </body>

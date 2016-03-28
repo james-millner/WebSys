@@ -62,11 +62,20 @@
     </div>
     <div id="welcome" class="well">
       <p id="welcometxt">Profile Page</p>
-      <p>${user.fname}</p>
     </div>
   </div>
   <div id="content" class="container-fluid">
-       Profile
+    <div id="jumbo" class="jumbotron">
+      <h1>User Details</h1>
+    </div>
+    <div class="container-fluid">
+      <div class="col-md-6">
+        <p><b>First: </b></p>
+        <p>${user.fname}</p>
+        <p><b>Surname: </b></p>
+        <p>${user.sname}</p>
+      </div>
+    </div>
   </div>
 
   </body>

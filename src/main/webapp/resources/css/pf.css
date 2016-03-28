@@ -3,6 +3,7 @@
 @import url(https://fonts.googleapis.com/css?family=Muli);
 @import url(https://fonts.googleapis.com/css?family=Rambla);
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 
 body {
     padding-top: 10px;
@@ -23,9 +24,16 @@ h2{
 }
 
 p {
-    font-family: 'Poiret One', sans-serif;
-    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    margin-left: 70px;
     color: azure;
+}
+
+.jumbotron {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
 }
 
 #header {
@@ -38,6 +46,7 @@ p {
     background-image: url("/resources/images/welcomeImage.jpg");
     margin-left: 0px;
     margin-right: 0px;
+    margin-bottom: 10px;
     border-color: #3b3a3c;
 }
 
@@ -47,17 +56,15 @@ p {
     font-family: 'Lobster', sans-serif;
     font-size: 80px;
     text-shadow: 2px 8px 10px #000;
-    margin-left: 90px;
+    margin-left: 70px;
+    max-width: 1100px;
     margin-top: 10px;
-
 }
 
 #content{
-    margin-top: 10px;
-    border-radius: 10px;
-    background: #3b3a3c;
+    background: #333234;
+    border-radius: 15px/50px;
     padding: 20px;
-    max-width: 1100px;
 }
 
 

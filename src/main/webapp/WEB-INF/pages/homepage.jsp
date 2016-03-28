@@ -96,8 +96,8 @@
               <div id="dtype" class="col-xs-2" align="center">
                 <span class="glyphicon glyphicon-menu-down" style="color: azure" aria-hidden="true"> <p>${recipe.ftype}</p></span>
               </div>
-              <div class="col-xs-4">
-                <a class="btn icon-btn btn-default" style="width: 215px" href='<c:out value="${viewRecipe}"></c:out>'><span class="glyphicon btn-glyphicon glyphicon-blackboard img-circle text-muted"></span>View Recipe</a>
+              <div class="col-xs-6">
+                <a class="btn icon-btn btn-default" style="max-width: 215px" href='<c:out value="${viewRecipe}"></c:out>'><span class="glyphicon btn-glyphicon glyphicon-blackboard img-circle text-muted"></span>View Recipe</a>
               </div>
             </div>
           </div>

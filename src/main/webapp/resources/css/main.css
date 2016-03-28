@@ -3,6 +3,7 @@
 @import url(https://fonts.googleapis.com/css?family=Muli);
 @import url(https://fonts.googleapis.com/css?family=Rambla);
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 
 body {
     padding-top: 10px;
@@ -23,7 +24,7 @@ h2{
 }
 
 p {
-    font-family: 'Poiret One', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 14px;
     color: azure;
 }
@@ -66,6 +67,7 @@ p {
 
 .breadcrumb li {
     font-size: 26px;
+    font-family: Raleway;
     border-radius: 15px 50px 30px;
 }
 .breadcrumb a {color: rgba(255, 255, 255, 1);}
@@ -123,7 +125,7 @@ p {
 }
 
 #rcreator {
-    font-family: 'Poiret One', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 13px;
     color: azure;
 

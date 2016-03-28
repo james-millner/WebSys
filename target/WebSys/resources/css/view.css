@@ -54,3 +54,7 @@ pre {
     font-size: 60px;
     text-shadow: 2px 8px 10px #000;
 }
+
+#comments {
+    border-top: 2px white;
+}

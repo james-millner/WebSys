@@ -1,5 +1,6 @@
 package com.jm.WebSys.controller;
 
+import com.jm.WebSys.DAO.MongoDBUserDAO;
 import com.jm.WebSys.domain.Encrypter;
 import com.jm.WebSys.domain.Recipe;
 import com.jm.WebSys.DAO.MongoDBRecipeDAO;
@@ -26,14 +27,16 @@ public class HomeController {
         //Decrypt URL Variable
         Encrypter e = new Encrypter(name);
         String crypt = e.smDecrypt();
+
         //Display User.
         model.addAttribute("name", crypt);
         model.addAttribute("ecLink", name);
         // Since 2.10.0, uses MongoClient.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
-        MongoDBRecipeDAO dao = new MongoDBRecipeDAO(mongo);
+        MongoDBUserDAO udao = new MongoDBUserDAO(mongo);
+        MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
 
-        List<Recipe> recipes = dao.getRecipes();
+        List<Recipe> recipes = rdao.getRecipes();
         System.out.println(recipes.size());
         //Adds all recipes to the model to output in the view.
         model.addAttribute("recipes", recipes);

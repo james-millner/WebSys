@@ -1,15 +1,12 @@
 package com.jm.WebSys.DAO;
 
+import com.jm.WebSys.converter.UserConverter;
 import com.jm.WebSys.domain.Recipe;
 import com.jm.WebSys.converter.RecipeConverter;
 
-import com.mongodb.DBCollection;
-import com.mongodb.MongoClient;
+import com.mongodb.*;
 
-import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DBCollection;
-import com.mongodb.DBCursor;
-import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import org.bson.types.ObjectId;
 
@@ -50,6 +47,20 @@ public class MongoDBRecipeDAO {
         DBObject query = BasicDBObjectBuilder.start().append("_id", new ObjectId(recipe.getId())).get();
         DBObject result = this.db.findOne(query);
         return RecipeConverter.toRecipe(result);
+    }
+
+    public List<Recipe> getCreatorsRecipes(Recipe recipe) {
+        String creator = recipe.getCreator();
+        List<Recipe> recipes = new ArrayList<Recipe>();
+        DBObject query = new BasicDBObject();
+        query.put("creator", creator);
+        DBCursor cursor = db.find(query);
+        while(cursor.hasNext()) {
+            DBObject obj = cursor.next();
+            Recipe r = RecipeConverter.toRecipe(obj);
+            recipes.add(r);
+        }
+        return recipes;
     }
 
     public void updateRecipe(Recipe recipe) {

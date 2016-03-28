@@ -54,7 +54,7 @@ public class SignInController {
     		//Success
 			UserConverter userConverter = new UserConverter();
 			User pass = userConverter.toUser(cursor.next());
-			String name =  pass.getFname();
+			String name =  pass.getUsername();
 			disp.setString(name);
 			disp.smEncrypt();
 			String t = disp.returnString();
