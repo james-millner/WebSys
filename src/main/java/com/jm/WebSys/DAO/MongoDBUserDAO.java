@@ -29,9 +29,9 @@ public class MongoDBUserDAO {
     }
 
     public User getUser(User user) {
-        String name = user.getFname();
+        String name = user.getUsername();
         DBObject query = new BasicDBObject();
-        query.put("fname", name);
+        query.put("username", name);
         DBCursor cursor = db.find(query);
         while(cursor.hasNext()) {
             DBObject obj = cursor.next();

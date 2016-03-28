@@ -69,8 +69,13 @@
       <h1>User Details</h1>
     </div>
     <div class="container-fluid">
-      <label>Name.</label>
-      <p>First: ${user.fname}</p>
+      <div class="col-md-3">
+        <p><b>First: </b>${user.fname}</p>
+        <p><b>Surname: </b>${user.sname}</p>
+      </div>
+      <div class="col-md-3">
+        <p><b>Date Of Birth: </b>${user.dob}</p>
+      </div>
     </div>
   </div>
 

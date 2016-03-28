@@ -67,6 +67,7 @@ p {
 
 .breadcrumb li {
     font-size: 26px;
+    font-family: Raleway;
     border-radius: 15px 50px 30px;
 }
 .breadcrumb a {color: rgba(255, 255, 255, 1);}
