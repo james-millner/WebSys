@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="/resources/images/favicon_main.ico">
 
     <title>Add Recipe!</title>
 
@@ -93,7 +93,7 @@
         <div class="col-md-6">
           <div class="col-md-4">
             <label>Type: </label>
-            <select multiple class="form-control" id="foodtype" name="ftype" style="width: 150px" style="height: 175px">
+            <select multiple class="form-control" id="foodtype" name="ftype" style="width: 150px" style="height: 175px" required>
               <option>American</option>
               <option>British</option>
               <option>Caribbean</option>

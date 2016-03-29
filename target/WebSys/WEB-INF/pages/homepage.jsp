@@ -10,7 +10,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="/resources/images/favicon_main.ico">
 
     <title>Homepage</title>
 
@@ -80,10 +80,7 @@
             <div id="dname" class="col-xs-12">
               <p id="rname">${recipe.rname}</p>
             </div>
-            <div id="dcreator" class="col-xs-1">
-              <p id="rcreator"><b>Created By:</b><br>${recipe.creator}</p>
-            </div>
-            <div id="ddesc" class="col-xs-5">
+            <div id="ddesc" class="col-xs-6">
               <p><b>Description: </b><br>${recipe.rdesc}</p>
             </div>
             <div id="dtime" class="col-xs-6">

@@ -10,7 +10,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="/resources/images/favicon_main.ico">
 
     <title>View!</title>
 
@@ -44,17 +44,17 @@
           <!-- Nav links, forms, and other content-->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="/homepage?name=${ecLink}">Home <span class="sr-only">(current)</span></a></li>
-              <li><a href="/profile?name=${ecLink}">Profile</a></li>
+              <li class="active"><a href="/homepage?name=${name}">Home <span class="sr-only">(current)</span></a></li>
+              <li><a href="/profile?name=${name}">Profile</a></li>
               <li class="dropdown-a">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipes! <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="/addRecipe?name=${ecLink}">Add Recipe!</a></li>
+                  <li><a href="/addRecipe?name=${name}">Add Recipe!</a></li>
                 </ul>
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <a class="navbar-brand">User: ${name}</a>
+              <a class="navbar-brand">User: ${ecLink}</a>
               <li><a href="/signin">Logout.</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -104,8 +104,24 @@
           ${recipeModel.creator}
         </p>
       </div>
-      <div id="comments" class="col-md-9">
-        COMMENTS
+      <div id="commentArea" class="col-md-9">
+        <form method="post" action="" command="comment">
+          <label id="commentLbl">Add a Comment: </label>
+          <br>
+          <textarea type="text" id="description" class="form-control" name="comment" required style="width: 350px; height: 75px"></textarea>
+          <br>
+          <button class="btn btn-warning" type="submit">Add Comment!</button>
+        </form>
+
+        <br>
+        <div id="scrollBar" class="container-fluid">
+          <div id="items">
+          <c:forEach var="comment" items="${comments}">
+              <div id="commentOut" class="well well-sm">
+              <p style="color: #212224"><b>User:</b> ${comment.author}<br><i>TimeCreated: </i> ${comment.timestamp}</p>
+              <p style="color: #212224">${comment.comment}</p>
+            </div>
+          </c:forEach>
       </div>
     </div>
   </div>
