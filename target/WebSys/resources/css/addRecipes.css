@@ -19,8 +19,11 @@ textarea {
 }
 
 #content {
-    border-radius: 25px;
+    border-radius: 20px/80px;
+    border-style: outset;
+    border-color: #212224;
     background: #3b3a3c;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
