@@ -66,7 +66,7 @@
   </div>
   <div id="content" class="container-fluid">
     <div id="dTag" class="jumbotron">
-      <h1>User Details</h1>
+      <h1><span class="glyphicon glyphicon-user" style="color: #333234" aria-hidden="true"></span>  &nbsp; User Details</h1>
     </div>
     <div id="details" class="container-fluid">
         <div class="col-md-3">
@@ -87,7 +87,7 @@
       </div>
     <div id="rSeperator"class="container-fluid">
       <div id="rTag" class="jumbotron">
-        <h1>Created Recipes:</h1>
+        <h1><span class="glyphicon glyphicon-pencil" style="color: #333234" aria-hidden="true"></span>  &nbsp; Created Recipes:</h1>
       </div>
       <div id="scrollBar" class="container-fluid">
         <div id="items">
@@ -95,6 +95,8 @@
           <div class="item col-xs-6 col-md-3">
             <a href="/viewRecipe?_id=${recipe.id}&name=${ecLink}" class="thumbnail">
               <b>${recipe.rname}</b>
+              <br>
+              <small>${recipe.ftype}</small>
             </a>
           </div>
         </c:forEach>
