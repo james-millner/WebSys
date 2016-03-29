@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 /**
  * Created by James on 28/03/2016.
  */
@@ -44,8 +46,18 @@ public class ProfileController {
         recipe.setCreator(crypt);
 
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
-        int rcount = rdao.getCreatorsRecipes(recipe).size();
-        System.out.println("** I MADE : " + rcount);
+        List<Recipe> recipeList = rdao.getCreatorsRecipes(recipe);
+        model.addAttribute("rList", recipeList);
+
+        //Profile Stats:
+        int totalRecipes = recipeList.size();
+        int totalViews = 0;
+        for(int i = 0; i < totalRecipes; i++) {
+            Recipe r = recipeList.get(i);
+            totalViews += r.getViews();
+        }
+        model.addAttribute("tRecipes", totalRecipes);
+        model.addAttribute("tViews", totalViews);
 
         return "profile";
     }

@@ -65,17 +65,44 @@
     </div>
   </div>
   <div id="content" class="container-fluid">
-    <div id="jumbo" class="jumbotron">
+    <div id="dTag" class="jumbotron">
       <h1>User Details</h1>
     </div>
+    <div id="details" class="container-fluid">
+        <div class="col-md-3">
+          <p><b>First: </b> &nbsp; ${user.fname}</p>
+          <p><b>Surname: </b> &nbsp; ${user.sname}</p>
+        </div>
+        <div class="col-md-3">
+          <p><b>Date Of Birth: </b> <br> ${user.dob}</p>
+        </div>
+        <div class="col-md-2">
+          <p><b>Total Recipes: </b></p>
+          <p>${tRecipes}</p>
+        </div>
+        <div class="col-md-2">
+          <p><b>Total Views:</b></p>
+          <p>${tViews}</p>
+        </div>
+      </div>
+    <div id="rSeperator"class="container-fluid">
+      <div id="rTag" class="jumbotron">
+        <h1>Created Recipes:</h1>
+      </div>
+      <div id="scrollBar" class="container-fluid">
+        <div id="items">
+        <c:forEach var="recipe" items="${rList}">
+          <div class="item col-xs-6 col-md-3">
+            <a href="/viewRecipe?_id=${recipe.id}&name=${ecLink}" class="thumbnail">
+              <b>${recipe.rname}</b>
+            </a>
+          </div>
+        </c:forEach>
+        </div>
+      </div>
     <div class="container-fluid">
-      <div class="col-md-3">
-        <p><b>First: </b>${user.fname}</p>
-        <p><b>Surname: </b>${user.sname}</p>
-      </div>
-      <div class="col-md-3">
-        <p><b>Date Of Birth: </b>${user.dob}</p>
-      </div>
+      BOTTOM
+    </div>
     </div>
   </div>
 

@@ -26,7 +26,6 @@ h2{
 p {
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
-    margin-left: 70px;
     color: azure;
 }
 
@@ -70,4 +69,75 @@ p {
     max-width: 1100px;
 }
 
+#dTag {
+    padding-top: 5px;
+    border-width: 800px;
+    border-top: 2px outset;
+    border-bottom: 2px outset;
+    border-color: white;
+    padding-bottom: 2px;
+}
+
+#details {
+    margin-bottom:10px;
+    border-bottom: 2px inset;
+    border-top: 2px inset;
+    padding: 25px
+}
+
+
+#rSeperator {
+    padding: 0px;
+}
+
+#scrollBar {
+    overflow: auto;
+    width:100%;
+    height:300px;
+}
+
+#rTag {
+    padding-top: 5px;
+    border-width: 800px;
+    border-top: 2px outset;
+    border-bottom: 2px outset;
+    border-color: white;
+    padding-bottom: 2px;
+}
+
+
+.thumbnail {
+    font-family: 'Muli', sans-serif;
+    font-size: 18px;
+    color: #212224;
+    word-wrap: break-word;
+    text-align: center;
+    vertical-align: middle;
+    min-height: 100px;
+    max-height: 180px;
+    padding-top: 15px;
+}
+
+
+#items {
+    width: 1000px;
+}
+
+.item{
+    float:left;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
 
