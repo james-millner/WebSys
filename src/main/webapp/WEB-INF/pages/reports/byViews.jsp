@@ -81,15 +81,27 @@
     <div class="modal-dialog">
 
       <!-- Modal content-->
-      <div class="modal-content">
+      <div style="background: #3b3a3c;" class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+          <h2 class="modal-title">Choose Types!</h2>
         </div>
         <div class="modal-body">
-          <p>Some text in the modal.</p>
+          <p>Select a type: </p>
+          <a href="/byType?name=${ecLink}&type=American" type="submit" class="btn-custom  btn btn-default">American</a>
+          <a href="/byType?name=${ecLink}&type=British" type="submit" class="btn-custom  btn btn-default">British</a>
+          <a href="/byType?name=${ecLink}&type=Caribbean" type="submit" class="btn-custom  btn btn-default">Caribbean</a>
+          <a href="/byType?name=${ecLink}&type=Chinese" type="submit" class="btn-custom  btn btn-default">Chinese</a>
+          <a href="/byType?name=${ecLink}&type=Eastern European" type="submit" class="btn-custom  btn btn-default">Eastern European</a>
+          <a href="/byType?name=${ecLink}&type=French" type="submit" class="btn-custom  btn btn-default">French</a>
+          <a href="/byType?name=${ecLink}&type=Indian" type="submit" class="btn-custom  btn btn-default">Indian</a>
+          <a href="/byType?name=${ecLink}&type=Italian" type="submit" class="btn-custom  btn btn-default">Italian</a>
+          <a href="/byType?name=${ecLink}&type=Mexican" type="submit" class="btn-custom  btn btn-default">Mexican</a>
+          <a href="/byType?name=${ecLink}&type=Spanish" type="submit" class="btn-custom  btn btn-default">Spanish</a>
+          <a href="/byType?name=${ecLink}&type=Thai" type="submit" class="btn-custom  btn btn-default">Thai</a>
         </div>
         <div class="modal-footer">
+          <a href="#" type="submit" class="btn-custom  btn btn-default">Submit</a>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>

@@ -46,7 +46,7 @@ public class HomeController {
     }
     @RequestMapping("/byviews")
     public String reportViews(Model model,
-                              @RequestParam("name") String name) {
+                              @RequestParam("name") String name, String type) {
         //Decrypt URL Variable
         Encrypter e = new Encrypter(name);
         String crypt = e.smDecrypt();
@@ -64,8 +64,52 @@ public class HomeController {
         List<Recipe> sorted = sortByViews(recipes);
         //Adds all recipes to the model to output in the view.
         model.addAttribute("recipes", sorted);
+
+        System.out.println("SELECTED : " + type);
         mongo.close();
         return "/reports/byViews";
+    }
+
+    @RequestMapping("/byType")
+    public String reportType(Model model,
+                              @RequestParam("name") String name,
+                              @RequestParam("type") String type) {
+        //Decrypt URL Variable
+        Encrypter e = new Encrypter(name);
+        String crypt = e.smDecrypt();
+
+        //Display User.
+        model.addAttribute("name", crypt);
+        model.addAttribute("ecLink", name);
+        // Since 2.10.0, uses MongoClient.
+        MongoClient mongo = new MongoClient( "localhost" , 27017 );
+        MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
+
+        //Get general list of recipes
+        List<Recipe> recipes = rdao.getRecipes();
+        List<Recipe> sorted = sortByType(recipes,type);
+        //Adds all recipes to the model to output in the view.
+        model.addAttribute("recipes", sorted);
+        mongo.close();
+        return "/reports/byType";
+    }
+
+    public List<Recipe> sortByType(List<Recipe> recipes, String fType) {
+        //Make a results list to return.
+        List<Recipe> results = new ArrayList<Recipe>();
+        //Int to loop through entire array.
+        int size = recipes.size();
+        System.out.println(size + " SIZE HERE");
+
+        for(int i = 0; i < size; i++) {
+            Recipe r = recipes.get(i);
+            if (r.getFtype().equals(fType)) {
+                results.add(r);
+            } else {
+                System.out.println("WE DONT");
+            }
+        }
+        return results;
     }
 
     //Method for sorting recipe list by views.

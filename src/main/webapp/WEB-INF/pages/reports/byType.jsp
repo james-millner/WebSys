@@ -67,8 +67,8 @@
   </div>
   <div id="reports" class="container-fluid" align="center">
     <form method="post" class="navbar-form navbar-left" role="search">
-      <a href="/byviews?name=${ecLink}" type="submit" class="btn-custom  btn btn-default active">Top Recipes!</a>
-      <a type="button" class="btn-custom  btn btn-default" data-toggle="modal" data-target="#typeModal">By Type!</a>
+      <a href="/byviews?name=${ecLink}" type="submit" class="btn-custom  btn btn-default">Top Recipes!</a>
+      <a type="button" class="btn-custom  btn btn-default active" data-toggle="modal" data-target="#typeModal">By Type!</a>
       <div class="form-group">
         <input style="width: 600px" type="text" class="form-control" placeholder="Search by recipe name...">
       </div>

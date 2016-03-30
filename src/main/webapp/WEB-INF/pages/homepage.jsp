@@ -87,25 +87,21 @@
           <h2 class="modal-title">Choose Types!</h2>
         </div>
         <div class="modal-body">
-          <form method="post">
             <p>Select a type: </p>
-            <select multiple class="form-control" id="foodtype" name="ftype" style="width: 300px" style="height: 600px" required>
-              <option>American</option>
-              <option>British</option>
-              <option>Caribbean</option>
-              <option>Chinese</option>
-              <option>Eastern European</option>
-              <option>French</option>
-              <option>Indian</option>
-              <option>Italian</option>
-              <option>Mexican</option>
-              <option>Spanish</option>
-              <option>Thai</option>
-            </select>
-          </form>
+          <a href="/byType?name=${ecLink}&type=American" type="submit" class="btn-custom  btn btn-default">American</a>
+          <a href="/byType?name=${ecLink}&type=British" type="submit" class="btn-custom  btn btn-default">British</a>
+          <a href="/byType?name=${ecLink}&type=Caribbean" type="submit" class="btn-custom  btn btn-default">Caribbean</a>
+          <a href="/byType?name=${ecLink}&type=Chinese" type="submit" class="btn-custom  btn btn-default">Chinese</a>
+          <a href="/byType?name=${ecLink}&type=Eastern European" type="submit" class="btn-custom  btn btn-default">Eastern European</a>
+          <a href="/byType?name=${ecLink}&type=French" type="submit" class="btn-custom  btn btn-default">French</a>
+          <a href="/byType?name=${ecLink}&type=Indian" type="submit" class="btn-custom  btn btn-default">Indian</a>
+          <a href="/byType?name=${ecLink}&type=Italian" type="submit" class="btn-custom  btn btn-default">Italian</a>
+          <a href="/byType?name=${ecLink}&type=Mexican" type="submit" class="btn-custom  btn btn-default">Mexican</a>
+          <a href="/byType?name=${ecLink}&type=Spanish" type="submit" class="btn-custom  btn btn-default">Spanish</a>
+          <a href="/byType?name=${ecLink}&type=Thai" type="submit" class="btn-custom  btn btn-default">Thai</a>
         </div>
         <div class="modal-footer">
-          <a href="/byType?name=${ecLink}" type="submit" class="btn-custom  btn btn-default">Submit</a>
+          <a href="#" type="submit" class="btn-custom  btn btn-default">Submit</a>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
