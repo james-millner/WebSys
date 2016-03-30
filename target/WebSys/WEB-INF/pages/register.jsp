@@ -7,6 +7,7 @@
 <title>Register</title>
 
 <head>
+	<link rel="icon" href="/resources/images/favicon_main.ico">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
@@ -55,5 +56,10 @@
 	</div>
       
     </div> <!-- /container -->
+	<div class="container">
+	<footer>
+		<p class="lead">&copy; 2016 James Millner. </p>
+	</footer>
+</div>
 </body>
 </html>

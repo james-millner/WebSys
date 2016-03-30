@@ -2,6 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lobster);
 @import url(https://fonts.googleapis.com/css?family=Muli);
 @import url(https://fonts.googleapis.com/css?family=Rambla);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 
 body {
     padding-top: 10px;
@@ -22,7 +23,7 @@ h2{
 }
 
 p {
-    font-family: 'Rambla', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 14px;
     color: azure;
 }

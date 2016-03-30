@@ -26,7 +26,7 @@
 
       <form class="form-signin" method="POST" action="" style="width: 300px" command="userDetails">
         <h2>Sign In</h2>
-        <p class="lead">Please enter all fields marked *.</p>
+        <p>Please enter all fields marked *.</p>
           <div class="form-group">
      	<input type="text" id="inputEmail" class="form-control" placeholder="Username *"type="text" name="username" required/>
   		</div>
@@ -43,6 +43,10 @@
 
 
     </div> <!-- /container -->
-
+    <div style="width: 200px" align="center" class="container">
+        <footer>
+            <p>&copy; 2016 James Millner. </p>
+        </footer>
+    </div>
 </body>
 </html>

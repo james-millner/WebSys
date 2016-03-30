@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by James on 21/03/2016.
  */
-public class Recipe {
+public class Recipe implements Comparable<Recipe> {
 
     String id;
     String rname;
@@ -111,5 +111,14 @@ public class Recipe {
 
     public void setFtype(String ftype) {
         this.ftype = ftype;
+    }
+
+    public int compareTo(Recipe compareRecipe) {
+
+        int compareViews = ((Recipe) compareRecipe).getViews();
+
+        //descending order
+        return compareViews - this.views;
+
     }
 }

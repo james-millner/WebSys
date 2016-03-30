@@ -67,10 +67,10 @@
   </div>
   <div id="reports" class="container-fluid" align="center">
     <form method="post" class="navbar-form navbar-left" role="search">
-      <a href="/byviews?name=${ecLink}" type="submit" class="btn-custom  btn btn-default">Top Recipes!</a>
+      <a type="submit" class="btn-custom  btn btn-default">Top Recipes!</a>
       <a type="submit" class="btn-custom  btn btn-default">Recent Recipes!</a>
       <div class="form-group">
-        <input style="width: 600px" type="text" class="form-control" placeholder="Search by recipe name...">
+        <input style="width: 600px" type="text" class="form-control" placeholder="Search">
       </div>
       <a type="submit" class="btn-custom btn btn-default">Submit</a>
     </form>
@@ -105,10 +105,10 @@
     </div>
   </div>
   <div class="container">
-  <footer>
-    <p class="lead pull-right"><a href="#">Back to top</a></p>
-    <p class="lead">&copy; 2016 James Millner. </p>
-  </footer>
+    <footer>
+      <p class="lead pull-right"><a href="#">Back to top</a></p>
+      <p class="lead">&copy; 2016 James Millner. </p>
+    </footer>
   </div>
   </body>
 </html>

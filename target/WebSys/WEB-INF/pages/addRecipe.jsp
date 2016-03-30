@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="/resources/css/addRecipes.css">
 </head>
   <body>
-  <div class="row" align="center">
+  <div style="margin-left: 0px; margin-right: 0px;" class="row" align="center">
       <div class="container" style="max-width: 1650px;" align="center">
       <nav class="navbar navbar-default" >
         <div class="container-fluid">
@@ -133,6 +133,11 @@
     </div>
     </div>
   </form>
-
+  <div class="container">
+    <footer>
+      <p class="lead pull-right"><a href="#">Back to top</a></p>
+      <p class="lead">&copy; 2016 James Millner. </p>
+    </footer>
+  </div>
   </body>
 </html>

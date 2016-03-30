@@ -107,6 +107,10 @@
     </div>
     </div>
   </div>
-
+  <div class="container">
+    <footer>
+      <p class="lead">&copy; 2016 James Millner. </p>
+    </footer>
+  </div>
   </body>
 </html>
