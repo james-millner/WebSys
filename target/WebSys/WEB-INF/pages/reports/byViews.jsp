@@ -67,13 +67,34 @@
   </div>
   <div id="reports" class="container-fluid" align="center">
     <form method="post" class="navbar-form navbar-left" role="search">
-      <a type="submit" class="btn-custom  btn btn-default">Top Recipes!</a>
-      <a type="submit" class="btn-custom  btn btn-default">Recent Recipes!</a>
+      <a href="/byviews?name=${ecLink}" type="submit" class="btn-custom  btn btn-default active">Top Recipes!</a>
+      <a type="button" class="btn-custom  btn btn-default" data-toggle="modal" data-target="#typeModal">By Type!</a>
       <div class="form-group">
-        <input style="width: 600px" type="text" class="form-control" placeholder="Search">
+        <input style="width: 600px" type="text" class="form-control" placeholder="Search by recipe name...">
       </div>
       <a type="submit" class="btn-custom btn btn-default">Submit</a>
     </form>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="typeModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
   </div>
   <div id="content" class="container-fluid">
        <div id="recipes" class="col-md-12">

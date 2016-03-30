@@ -68,12 +68,49 @@
   <div id="reports" class="container-fluid" align="center">
     <form method="post" class="navbar-form navbar-left" role="search">
       <a href="/byviews?name=${ecLink}" type="submit" class="btn-custom  btn btn-default">Top Recipes!</a>
-      <a type="submit" class="btn-custom  btn btn-default">Recent Recipes!</a>
+      <a type="button" class="btn-custom  btn btn-default" data-toggle="modal" data-target="#typeModal">By Type!</a>
       <div class="form-group">
         <input style="width: 600px" type="text" class="form-control" placeholder="Search by recipe name...">
       </div>
-      <a type="submit" class="btn-custom btn btn-default">Submit</a>
+      <a type="submit" class="btn-custom btn btn-default disabled">Submit</a>
     </form>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="typeModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div style="background: #3b3a3c;" class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title">Choose Types!</h2>
+        </div>
+        <div class="modal-body">
+          <form method="post">
+            <p>Select a type: </p>
+            <select multiple class="form-control" id="foodtype" name="ftype" style="width: 300px" style="height: 600px" required>
+              <option>American</option>
+              <option>British</option>
+              <option>Caribbean</option>
+              <option>Chinese</option>
+              <option>Eastern European</option>
+              <option>French</option>
+              <option>Indian</option>
+              <option>Italian</option>
+              <option>Mexican</option>
+              <option>Spanish</option>
+              <option>Thai</option>
+            </select>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <a href="/byType?name=${ecLink}" type="submit" class="btn-custom  btn btn-default">Submit</a>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
   </div>
   <div id="content" class="container-fluid">
        <div id="recipes" class="col-md-12">
