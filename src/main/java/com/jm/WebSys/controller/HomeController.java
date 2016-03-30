@@ -33,7 +33,6 @@ public class HomeController {
         model.addAttribute("ecLink", name);
         // Since 2.10.0, uses MongoClient.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
-        MongoDBUserDAO udao = new MongoDBUserDAO(mongo);
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
 
         List<Recipe> recipes = rdao.getRecipes();

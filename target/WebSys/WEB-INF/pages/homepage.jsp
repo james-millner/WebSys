@@ -66,11 +66,14 @@
     </div>
   </div>
   <div id="reports" class="container-fluid" align="center">
-    <ol class="breadcrumb">
-      <li class="active"><a href="#">Recent Recipes</a></li>
-      <li><a href="#">Top Recipes.</a></li>
-      <li><a href="#">Search.</a></li>
-    </ol>
+    <form method="post" class="navbar-form navbar-left" role="search">
+      <a type="submit" class="btn-custom  btn btn-default">Top Recipes!</a>
+      <a type="submit" class="btn-custom  btn btn-default">Recent Recipes!</a>
+      <div class="form-group">
+        <input style="width: 600px" type="text" class="form-control" placeholder="Search">
+      </div>
+      <a type="submit" class="btn-custom btn btn-default">Submit</a>
+    </form>
   </div>
   <div id="content" class="container-fluid">
        <div id="recipes" class="col-md-12">
