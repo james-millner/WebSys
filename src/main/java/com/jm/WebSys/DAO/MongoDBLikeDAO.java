@@ -27,7 +27,7 @@ public class MongoDBLikeDAO {
         return like;
     }
 
-    public List<Like> getRecipeCommentsByRID(Like like) {
+    public List<Like> getLikesByRID(Like like) {
         String rid = like.getRid();
         List<Like> likes = new ArrayList<Like>();
         DBObject query = new BasicDBObject();
@@ -41,7 +41,7 @@ public class MongoDBLikeDAO {
         return likes;
     }
 
-    public List<Like> getRecipeCommentsByUID(Like like) {
+    public List<Like> getLikesByUID(Like like) {
         String rid = like.getRid();
         List<Like> likes = new ArrayList<Like>();
         DBObject query = new BasicDBObject();
