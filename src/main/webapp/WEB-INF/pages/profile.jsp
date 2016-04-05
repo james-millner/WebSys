@@ -105,7 +105,7 @@
     </div>
     <div id="lSeperator"class="container-fluid">
       <div id="lTag" class="jumbotron">
-        <h1><span class="glyphicon glyphicon-pencil" style="color: #333234" aria-hidden="true"></span>  &nbsp; Liked Recipes:</h1>
+        <h1><span class="glyphicon glyphicon-heart" style="color: #333234" aria-hidden="true"></span>  &nbsp; Liked Recipes:</h1>
       </div>
       <div id="lscrollBar" class="container-fluid">
         <div id="litems">
