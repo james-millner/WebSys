@@ -54,10 +54,10 @@ public class MongoDBLikeDAO {
     }
 
     public List<Like> getLikesByUID(Like like) {
-        String rid = like.getRid();
+        String uid = like.getUid();
         List<Like> likes = new ArrayList<Like>();
         DBObject query = new BasicDBObject();
-        query.put("uid", rid);
+        query.put("uid", uid);
         DBCursor cursor = db.find(query);
         while(cursor.hasNext()) {
             DBObject obj = cursor.next();

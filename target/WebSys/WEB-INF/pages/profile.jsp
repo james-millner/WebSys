@@ -102,9 +102,24 @@
         </c:forEach>
         </div>
       </div>
-    <div class="container-fluid">
-      BOTTOM
     </div>
+    <div id="lSeperator"class="container-fluid">
+      <div id="lTag" class="jumbotron">
+        <h1><span class="glyphicon glyphicon-pencil" style="color: #333234" aria-hidden="true"></span>  &nbsp; Liked Recipes:</h1>
+      </div>
+      <div id="lscrollBar" class="container-fluid">
+        <div id="litems">
+          <c:forEach var="recipe" items="${likesList}">
+            <div class="item col-xs-6 col-md-3">
+              <a href="/viewRecipe?_id=${recipe.id}&name=${ecLink}" class="thumbnail">
+                <b>${recipe.rname}</b>
+                <br>
+                <small>${recipe.ftype}</small>
+              </a>
+            </div>
+          </c:forEach>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container">

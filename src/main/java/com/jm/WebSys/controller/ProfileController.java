@@ -1,8 +1,10 @@
 package com.jm.WebSys.controller;
 
+import com.jm.WebSys.DAO.MongoDBLikeDAO;
 import com.jm.WebSys.DAO.MongoDBRecipeDAO;
 import com.jm.WebSys.DAO.MongoDBUserDAO;
 import com.jm.WebSys.domain.Encrypter;
+import com.jm.WebSys.domain.Like;
 import com.jm.WebSys.domain.Recipe;
 import com.jm.WebSys.domain.User;
 import com.mongodb.MongoClient;
@@ -11,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -49,6 +52,23 @@ public class ProfileController {
         List<Recipe> recipeList = rdao.getCreatorsRecipes(recipe);
         model.addAttribute("rList", recipeList);
 
+        //Get a list of liked recipes by the USERS ID.
+        MongoDBLikeDAO likeDAO = new MongoDBLikeDAO(mongo);
+        Like blank = new Like();
+        blank.setUid(user.getId());
+        List<Like> likes = likeDAO.getLikesByUID(blank);
+
+        //With that list find the relevant recipes.
+        List<Recipe> allRecipes = rdao.getRecipes();
+        List<Recipe> likedRecipes = new ArrayList<Recipe>();
+        for(int i = 0; i < likes.size(); i++) {
+            String rid = likes.get(i).getRid();
+            Recipe r = new Recipe();
+            r.setId(rid);
+            Recipe f = rdao.getRecipe(r);
+            likedRecipes.add(f);
+        }
+        model.addAttribute("likesList", likedRecipes);
         //Profile Stats:
         int totalRecipes = recipeList.size();
         int totalViews = 0;
