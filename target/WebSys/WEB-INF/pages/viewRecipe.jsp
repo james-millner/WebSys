@@ -69,20 +69,23 @@
     <div class="col-lg-12" align="center">
       <p style="font-size: 24px; text-shadow: 2px 8px 10px #000;"><b>Recipe Details:</b></p>
     </div>
-    <div class="col-md-12" align="center">
-      <div class="col-sm-4"></div>
-      <div class="col-sm-4">
-        <div class="col-sm-4">
+    <div id="mainMenu" class="col-md-12" align="center">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+        <div class="col-sm-3">
         <span class="glyphicon glyphicon-time" style="color: azure" aria-hidden="true"></span> <p>${recipeModel.rhours} H - ${recipeModel.rmins} M</p>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
         <span class="glyphicon glyphicon-user" style="color: azure" aria-hidden="true"></span> <p>${recipeModel.views}</p>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
         <span class="glyphicon glyphicon-menu-down" style="color: azure" aria-hidden="true"></span> <p>${recipeModel.ftype}</p>
         </div>
+        <div class="col-sm-3">
+          <a href="/addLike?_id=${recipeModel.id}&name=${name}" class="btn btn-circle-lg btn-danger"><span class="glyphicon glyphicon-thumbs-up"></span> </a>
+        </div>
       </div>
-      <div class="col-sm-4"></div>
+      <div class="col-sm-3"></div>
     </div>
     <div class="col-lg-12" align="left">
       <div id="ing" class="col-md-3">
