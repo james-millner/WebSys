@@ -82,7 +82,12 @@
         <span class="glyphicon glyphicon-menu-down" style="color: azure" aria-hidden="true"></span> <p>${recipeModel.ftype}</p>
         </div>
         <div class="col-sm-3">
-          <a href="/addLike?_id=${recipeModel.id}&name=${name}" class="btn btn-circle-lg btn-danger"><span class="glyphicon glyphicon-thumbs-up"></span> </a>
+          <c:if test="${liked == 'y'}">
+            <a href="/removeLike?_id=${recipeModel.id}&name=${name}" class="btn btn-circle-lg btn-danger"><span class="glyphicon glyphicon glyphicon-ok"></span></a>
+          </c:if>
+          <c:if test="${liked == 'n'}">
+            <a href="/addLike?_id=${recipeModel.id}&name=${name}" class="btn btn-circle-lg btn-danger"><span class="glyphicon glyphicon-thumbs-up"></span> </a>
+          </c:if>
         </div>
       </div>
       <div class="col-sm-3"></div>

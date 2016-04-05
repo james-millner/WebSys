@@ -27,8 +27,20 @@ public class MongoDBLikeDAO {
         return like;
     }
 
+    public List<Like> getLikes() {
+        List<Like> likes = new ArrayList<Like>();
+        DBCursor cursor = db.find();
+        while(cursor.hasNext()) {
+            DBObject object = cursor.next();
+            Like like = LikeConverter.toLike(object);
+            likes.add(like);
+        }
+        return likes;
+    }
+
     public List<Like> getLikesByRID(Like like) {
         String rid = like.getRid();
+        String uid = like.getUid();
         List<Like> likes = new ArrayList<Like>();
         DBObject query = new BasicDBObject();
         query.put("rid", rid);
@@ -53,6 +65,12 @@ public class MongoDBLikeDAO {
             likes.add(c);
         }
         return likes;
+    }
+
+    public void deleteLike(Like l) {
+        DBObject query = BasicDBObjectBuilder.start()
+                .append("_id", new ObjectId(l.getId())).get();
+        this.db.remove(query);
     }
 
 }

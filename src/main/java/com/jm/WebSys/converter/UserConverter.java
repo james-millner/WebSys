@@ -34,6 +34,7 @@ public class UserConverter {
     public static User toUser(DBObject obj) {
         User u = new User();
         ObjectId id = (ObjectId) obj.get("_id");
+        u.setId(id.toString());
         u.setFname((String) obj.get("fname"));
         u.setSname((String) obj.get("sname"));
         u.setDob((String) obj.get("dob"));
