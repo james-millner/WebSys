@@ -2,7 +2,6 @@ package com.jm.WebSys.converter;
 
 
 import com.jm.WebSys.domain.Comment;
-import com.jm.WebSys.domain.User;
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DBObject;
 

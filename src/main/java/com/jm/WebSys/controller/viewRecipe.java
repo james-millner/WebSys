@@ -4,6 +4,7 @@ import com.jm.WebSys.DAO.MongoDBCommentDAO;
 import com.jm.WebSys.DAO.MongoDBRecipeDAO;
 import com.jm.WebSys.domain.Comment;
 import com.jm.WebSys.domain.Encrypter;
+import com.jm.WebSys.domain.Like;
 import com.jm.WebSys.domain.Recipe;
 import com.mongodb.MongoClient;
 import org.springframework.stereotype.Controller;
@@ -49,8 +50,6 @@ public class viewRecipe {
 
         dao.updateRecipe(recipe);
 
-        System.out.println(recipe.getRingredients());
-
         //Add the recipe on screen.
         model.addAttribute("recipeModel", recipe);
 
@@ -83,5 +82,18 @@ public class viewRecipe {
 
         return "redirect:viewRecipe?_id=" + id;
 
+    }
+
+    @RequestMapping("/addLike")
+    public String addLike(Like like,
+                          Model model,
+                          @RequestParam("_id") String rid,
+                          @RequestParam("name") String name) {
+
+        //Decrypt URL Variable
+        Encrypter e = new Encrypter(name);
+        String crypt = e.smDecrypt();
+        System.out.println("User: " + crypt + " liked the recipe " + rid);
+        return "redirect:/viewRecipe?_id=" + rid + "&name=" +name ;
     }
 }
