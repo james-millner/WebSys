@@ -1,6 +1,5 @@
 package com.jm.WebSys.domain;
 
-import com.sun.istack.internal.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
 /**
@@ -13,12 +12,12 @@ public class User {
 	String sname;
 	String dob;
 
-	@NotNull
-	@Size(min=5, max=20)
+//	@NotNull
+//	@Size(min=5, max=20)
 	 String username;
-
-	@NotNull
-	@Size(min=8, max=16)
+//
+//	@NotNull
+//	@Size(min=8, max=16)
 	 String password;
 	
 	public User() {

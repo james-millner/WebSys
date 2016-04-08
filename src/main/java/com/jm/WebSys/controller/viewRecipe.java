@@ -61,6 +61,7 @@ public class viewRecipe {
 
         List<Comment> commentList = cdao.getRecipeComments(c);
 
+        model.addAttribute("comments", commentList);
 
         //All comments added to page. Then restrict adding a blank comment.
         if (comment.getComment() == null) {
