@@ -37,6 +37,7 @@ public class HomeController {
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
 
         List<Recipe> recipes = rdao.getRecipes();
+        List<Recipe> az = sortAtoZ(recipes);
         System.out.println(recipes.size());
         //Adds all recipes to the model to output in the view.
         model.addAttribute("recipes", recipes);
@@ -117,6 +118,27 @@ public class HomeController {
         return "/reports/byViewsByParam";
     }
 
+    @RequestMapping("/byAtoZ")
+    public String atoz(Model model,
+                                   @RequestParam("name") String name, String type) {
+        //Decrypt URL Variable
+        Encrypter e = new Encrypter(name);
+        String crypt = e.smDecrypt();
+
+        //Display User.
+        model.addAttribute("name", crypt);
+        model.addAttribute("ecLink", name);
+        // Since 2.10.0, uses MongoClient.
+        MongoClient mongo = new MongoClient("localhost", 27017);
+        MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
+
+        //Get general list of recipes
+        List<Recipe> recipes = rdao.getRecipes();
+        List<Recipe> alphabetical = sortAtoZ(recipes);
+        model.addAttribute("recipes", alphabetical);
+        return "/reports/byAtoZ";
+    }
+
     public List<Recipe> sortByType(List<Recipe> recipes, String fType) {
         //Make a results list to return.
         List<Recipe> results = new ArrayList<Recipe>();
@@ -143,6 +165,25 @@ public class HomeController {
         recipeArray = recipes.toArray(recipeArray);
         //Sorts using the comparable interface.
         Arrays.sort(recipeArray);
+        //Add all recipes to the list.
+        for(Recipe temp: recipeArray) {
+            results.add(temp);
+        }
+        //return the list.
+        return results;
+
+    }
+
+    //Method for sorting recipe list by views.
+    public List<Recipe> sortAtoZ(List<Recipe> recipes) {
+        //Make a results list to return.
+        List<Recipe> results = new ArrayList<Recipe>();
+        //Establish a Array with the size of the recipe list passed to the method.
+        Recipe[] recipeArray = new Recipe[recipes.size()];
+        //Convert the passed list from list to an array.
+        recipeArray = recipes.toArray(recipeArray);
+        //Sorts using the comparable interface.
+        Arrays.sort(recipeArray, Recipe.recipeNameComparator);
         //Add all recipes to the list.
         for(Recipe temp: recipeArray) {
             results.add(temp);

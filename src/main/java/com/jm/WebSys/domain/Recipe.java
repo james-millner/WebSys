@@ -1,5 +1,8 @@
 package com.jm.WebSys.domain;
 
+import com.sun.org.apache.regexp.internal.RE;
+
+import java.util.Comparator;
 import java.util.Date;
 
 /**
@@ -122,5 +125,13 @@ public class Recipe implements Comparable<Recipe> {
 
     }
 
-    public 
+    public static  Comparator<Recipe> recipeNameComparator = new Comparator<Recipe>() {
+
+        public int compare(Recipe r1, Recipe r2) {
+            String rname1 = r1.getRname().toUpperCase();
+            String rname2 = r2.getRname().toUpperCase();
+
+            return rname1.compareTo(rname2);
+        }
+    };
 }

@@ -5,32 +5,25 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/jm/WebSys/domain/Recipe.java" line="117" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/jm/WebSys/domain/Recipe.java" line="120" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd2cdba3-6454-4445-ae84-1c6807d8ee85" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/InventorySystem_war.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/InventorySystem_war_exploded.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/WebSys/WEB-INF/classes/com/jm/WebSys/controller/HomeController.class" afterPath="$PROJECT_DIR$/target/WebSys/WEB-INF/classes/com/jm/WebSys/controller/HomeController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/WebSys/WEB-INF/classes/com/jm/WebSys/controller/SignInController.class" afterPath="$PROJECT_DIR$/target/WebSys/WEB-INF/classes/com/jm/WebSys/controller/SignInController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/WebSys/WEB-INF/classes/com/jm/WebSys/controller/viewRecipe.class" afterPath="$PROJECT_DIR$/target/WebSys/WEB-INF/classes/com/jm/WebSys/controller/viewRecipe.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/WebSys/WEB-INF/classes/com/jm/WebSys/domain/User.class" afterPath="$PROJECT_DIR$/target/WebSys/WEB-INF/classes/com/jm/WebSys/domain/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/WebSys/WEB-INF/classes/com/jm/WebSys/domain/Recipe.class" afterPath="$PROJECT_DIR$/target/WebSys/WEB-INF/classes/com/jm/WebSys/domain/Recipe.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/jm/WebSys/controller/HomeController.class" afterPath="$PROJECT_DIR$/target/classes/com/jm/WebSys/controller/HomeController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/jm/WebSys/controller/SignInController.class" afterPath="$PROJECT_DIR$/target/classes/com/jm/WebSys/controller/SignInController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/jm/WebSys/controller/viewRecipe.class" afterPath="$PROJECT_DIR$/target/classes/com/jm/WebSys/controller/viewRecipe.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/jm/WebSys/domain/User.class" afterPath="$PROJECT_DIR$/target/classes/com/jm/WebSys/domain/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/jm/WebSys/domain/Recipe.class" afterPath="$PROJECT_DIR$/target/classes/com/jm/WebSys/domain/Recipe.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jm/WebSys/controller/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/jm/WebSys/controller/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jm/WebSys/controller/SignInController.java" afterPath="$PROJECT_DIR$/src/main/java/com/jm/WebSys/controller/SignInController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jm/WebSys/controller/viewRecipe.java" afterPath="$PROJECT_DIR$/src/main/java/com/jm/WebSys/controller/viewRecipe.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jm/WebSys/domain/Recipe.java" afterPath="$PROJECT_DIR$/src/main/java/com/jm/WebSys/domain/Recipe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jm/WebSys/domain/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/jm/WebSys/domain/User.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/homepage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/homepage.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byType.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byType.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byViews.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byViews.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byViewsByParam.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byViewsByParam.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/WebSys/WEB-INF/pages/homepage.jsp" afterPath="$PROJECT_DIR$/target/WebSys/WEB-INF/pages/homepage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/WebSys/WEB-INF/pages/reports/byType.jsp" afterPath="$PROJECT_DIR$/target/WebSys/WEB-INF/pages/reports/byType.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/WebSys/WEB-INF/pages/reports/byViews.jsp" afterPath="$PROJECT_DIR$/target/WebSys/WEB-INF/pages/reports/byViews.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/WebSys/WEB-INF/pages/reports/byViewsByParam.jsp" afterPath="$PROJECT_DIR$/target/WebSys/WEB-INF/pages/reports/byViewsByParam.jsp" />
     </list>
     <ignored path="InventorySystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,36 +56,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jm/WebSys/controller/HomeController.java">
+      <file leaf-file-name="byViews.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byViews.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="34" />
-              <folding>
-                <element signature="method#reportType#0;class#HomeController#0" expanded="false" />
-                <element signature="method#sortByType#0;class#HomeController#0" expanded="false" />
-                <element signature="method#sortByViews#0;class#HomeController#0" expanded="false" />
-                <element signature="method#sortByViewsSpecified#0;class#HomeController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="homepage.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/homepage.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.773585">
-              <caret line="68" column="107" selection-start-line="68" selection-start-column="107" selection-end-line="68" selection-end-column="107" />
+            <state vertical-scroll-proportion="-7.056604">
+              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="71" selection-end-column="114" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Recipe.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jm/WebSys/domain/Recipe.java">
+      <file leaf-file-name="byAtoZ.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byAtoZ.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.83548385">
-              <caret line="124" column="11" selection-start-line="124" selection-start-column="11" selection-end-line="124" selection-end-column="11" />
+            <state vertical-scroll-proportion="-18.961538">
+              <caret line="71" column="114" selection-start-line="71" selection-start-column="114" selection-end-line="71" selection-end-column="114" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homepage.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/homepage.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.83164984">
+              <caret line="71" column="114" selection-start-line="71" selection-start-column="114" selection-end-line="71" selection-end-column="114" />
               <folding />
             </state>
           </provider>
@@ -101,18 +89,18 @@
       <file leaf-file-name="byType.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byType.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.692307">
-              <caret line="70" column="114" selection-start-line="70" selection-start-column="114" selection-end-line="70" selection-end-column="114" />
+            <state vertical-scroll-proportion="-11.769231">
+              <caret line="71" column="114" selection-start-line="71" selection-start-column="114" selection-end-line="71" selection-end-column="114" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="byViews.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byViews.jsp">
+      <file leaf-file-name="byViewsByParam.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byViewsByParam.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.692307">
-              <caret line="70" column="114" selection-start-line="70" selection-start-column="114" selection-end-line="70" selection-end-column="114" />
+            <state vertical-scroll-proportion="-11.769231">
+              <caret line="71" column="114" selection-start-line="71" selection-start-column="114" selection-end-line="71" selection-end-column="114" />
               <folding />
             </state>
           </provider>
@@ -140,7 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/jm/InventorySystem/controller/SignInController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jm/InventorySystem/controller/RegisterController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jm/InventorySystem/domain/Encrypter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jm/InventorySystem/domain/User.java" />
@@ -185,12 +172,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jm/WebSys/controller/viewRecipe.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jm/WebSys/domain/User.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jm/WebSys/domain/Recipe.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jm/WebSys/controller/HomeController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byType.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byViews.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byAtoZ.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byType.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byViewsByParam.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/homepage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jm/WebSys/domain/Recipe.java" />
       </list>
     </option>
   </component>
@@ -1330,15 +1318,15 @@
       <workItem from="1460112016293" duration="91000" />
       <workItem from="1460112142314" duration="186000" />
       <workItem from="1460112754262" duration="2734000" />
-      <workItem from="1460116953112" duration="1124000" />
+      <workItem from="1460116953112" duration="2705000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="295987000" />
+    <option name="totallyTimeSpent" value="297568000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1427,13 +1415,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jm/WebSys/controller/RegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="53" selection-start-line="50" selection-start-column="53" selection-end-line="50" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jm/WebSys/domain/Encrypter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1783,55 +1764,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byType.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jm/WebSys/domain/Recipe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.692307">
-          <caret line="70" column="114" selection-start-line="70" selection-start-column="114" selection-end-line="70" selection-end-column="114" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byViews.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.692307">
-          <caret line="70" column="114" selection-start-line="70" selection-start-column="114" selection-end-line="70" selection-end-column="114" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byViewsByParam.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6296296">
-          <caret line="70" column="114" selection-start-line="70" selection-start-column="114" selection-end-line="70" selection-end-column="114" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="133" column="42" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2328#2582#0" expanded="true" />
+            <element signature="e#2581#2582#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jm/WebSys/controller/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="34" />
+          <caret line="120" column="28" selection-start-line="120" selection-start-column="28" selection-end-line="120" selection-end-column="28" />
           <folding>
             <element signature="method#reportType#0;class#HomeController#0" expanded="false" />
-            <element signature="method#sortByType#0;class#HomeController#0" expanded="false" />
-            <element signature="method#sortByViews#0;class#HomeController#0" expanded="false" />
-            <element signature="method#sortByViewsSpecified#0;class#HomeController#0" expanded="false" />
+            <element signature="e#5886#5894#0" expanded="true" />
+            <element signature="e#6599#6607#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byViews.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.056604">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="71" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byType.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.769231">
+          <caret line="71" column="114" selection-start-line="71" selection-start-column="114" selection-end-line="71" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byViewsByParam.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.769231">
+          <caret line="71" column="114" selection-start-line="71" selection-start-column="114" selection-end-line="71" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reports/byAtoZ.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.961538">
+          <caret line="71" column="114" selection-start-line="71" selection-start-column="114" selection-end-line="71" selection-end-column="114" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/homepage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.773585">
-          <caret line="68" column="107" selection-start-line="68" selection-start-column="107" selection-end-line="68" selection-end-column="107" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jm/WebSys/domain/Recipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83548385">
-          <caret line="124" column="11" selection-start-line="124" selection-start-column="11" selection-end-line="124" selection-end-column="11" />
+        <state vertical-scroll-proportion="-0.83164984">
+          <caret line="71" column="114" selection-start-line="71" selection-start-column="114" selection-end-line="71" selection-end-column="114" />
           <folding />
         </state>
       </provider>
