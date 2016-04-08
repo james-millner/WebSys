@@ -37,7 +37,7 @@ public class HomeController {
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
 
         List<Recipe> recipes = rdao.getRecipes();
-        List<Recipe> az = sortAtoZ(recipes);
+        List<Recipe> az = recipesUnder30Minutes(recipes);
         System.out.println(recipes.size());
         //Adds all recipes to the model to output in the view.
         model.addAttribute("recipes", recipes);
@@ -64,6 +64,7 @@ public class HomeController {
         List<Recipe> recipes = rdao.getRecipes();
         //Create a new list and sort by view count
         List<Recipe> sorted = sortByViews(recipes);
+
         //Adds all recipes to the model to output in the view.
         model.addAttribute("recipes", sorted);
         System.out.println("SELECTED : " + type);
@@ -116,6 +117,28 @@ public class HomeController {
         List<Recipe> sortedByParam = sortByViewsSpecified(sorted, 50);
         model.addAttribute("recipes", sortedByParam);
         return "/reports/byViewsByParam";
+    }
+
+    @RequestMapping("/recipesUnder30")
+    public String recipesUnder30Mins(Model model,
+                                   @RequestParam("name") String name) {
+        //Decrypt URL Variable
+        Encrypter e = new Encrypter(name);
+        String crypt = e.smDecrypt();
+
+        //Display User.
+        model.addAttribute("name", crypt);
+        model.addAttribute("ecLink", name);
+        // Since 2.10.0, uses MongoClient.
+        MongoClient mongo = new MongoClient( "localhost" , 27017 );
+        MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
+
+        //Get general list of recipes
+        List<Recipe> recipes = rdao.getRecipes();
+        //Create a new list and sort by view count
+        List<Recipe> shortRecipes = recipesUnder30Minutes(recipes);
+        model.addAttribute("recipes", shortRecipes);
+        return "/reports/recipesUnder30";
     }
 
     @RequestMapping("/byAtoZ")
@@ -201,6 +224,20 @@ public class HomeController {
             //If the view count is bigger than the passed parameter, store it.
             if(r.getViews() > cutoff ) {
                 System.out.println(r.getViews());
+                results.add(r);
+            }
+        }
+        return results;
+    }
+
+    public List<Recipe> recipesUnder30Minutes(List<Recipe> recipes){
+        List<Recipe> results = new ArrayList<Recipe>();
+        for(int i = 0; i < recipes.size(); i++){
+            //Get the first recipes in the list.
+            Recipe r = recipes.get(i);
+            //If the recipe minute count is 15 or under, then add to results.
+            if(r.getRmins() <= 30 && r.getRhours() == 0 ) {
+                System.out.println(r.getRname());
                 results.add(r);
             }
         }

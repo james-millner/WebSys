@@ -68,6 +68,7 @@
   <div id="reports" class="container-fluid" align="center">
     <a href="/byAtoZ?name=${ecLink}" type="submit" class="btn-custom  btn btn-default">A to Z</a>
     <a href="/byviews?name=${ecLink}" type="submit" class="btn-custom  btn btn-default">Top Recipes!</a>
+    <a href="/recipesUnder30?name=${ecLink}" type="submit" class="btn-custom  btn btn-default">Recipes Under 30 Mins!</a>
     <a href="/byViewsParam?name=${ecLink}" type="submit" class="btn-custom  btn btn-default">Over 50 Views! </a>
     <a type="button" class="btn-custom  btn btn-default" data-toggle="modal" data-target="#typeModal">By Type!</a>
   </div>
