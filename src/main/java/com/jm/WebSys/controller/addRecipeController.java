@@ -7,6 +7,7 @@ import com.jm.WebSys.domain.Recipe;
 import com.mongodb.MongoClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -21,14 +22,11 @@ public class addRecipeController {
 
     @RequestMapping("/addRecipe")
     public String add(Model model,
-                      @RequestParam("name") String name,
+                      @CookieValue(value = "user") String user,
                       Recipe recipe) {
-        //Decrypt URL Variable
-        Encrypter e = new Encrypter(name);
-        String crypt = e.smDecrypt();
         //Display User.
-        model.addAttribute("name", crypt);
-        model.addAttribute("ecLink", name);
+        model.addAttribute("name", user);
+
 
         if(recipe.getRname() == null ){
             return "addRecipe";
@@ -40,7 +38,7 @@ public class addRecipeController {
         System.out.println(recipe.getRhours());
         System.out.println(recipe.getRmins());
         System.out.println(recipe.getRmethod());
-        recipe.setCreator(crypt);
+        recipe.setCreator(user);
         recipe.setViews(0);
 
         //get current date time with Date()

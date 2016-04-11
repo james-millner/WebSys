@@ -10,6 +10,7 @@ import com.jm.WebSys.domain.User;
 import com.mongodb.MongoClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -25,28 +26,25 @@ public class ProfileController {
     @RequestMapping("/profile")
     public String profile(Model model,
                           User user,
-                       @RequestParam("name") String name) {
-        //Decrypt URL Variable
-        Encrypter e = new Encrypter(name);
-        String crypt = e.smDecrypt();
+                          @CookieValue(value = "user") String userC) {
         //Display User.
-        model.addAttribute("name", crypt);
-        model.addAttribute("ecLink", name);
+        model.addAttribute("name", userC);
+
 
         User u = new User();
-        u.setUsername(crypt);
+        u.setUsername(userC);
 
         // Since 2.10.0, uses MongoClient.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBUserDAO dao = new MongoDBUserDAO(mongo);
 
         user = dao.getUser(u);
-        System.out.println(crypt);
+        System.out.println(userC);
         model.addAttribute("user", user);
 
         //Get recipe count
         Recipe recipe = new Recipe();
-        recipe.setCreator(crypt);
+        recipe.setCreator(userC);
 
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
         List<Recipe> recipeList = rdao.getCreatorsRecipes(recipe);

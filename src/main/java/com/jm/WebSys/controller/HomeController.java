@@ -8,6 +8,7 @@ import com.mongodb.MongoClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,14 +25,11 @@ public class HomeController {
 
     @RequestMapping("/homepage")
     public String home(Model model,
-                       @RequestParam("name") String name) {
-        //Decrypt URL Variable
-        Encrypter e = new Encrypter(name);
-        String crypt = e.smDecrypt();
+                       @CookieValue(value = "user") String user) {
 
         //Display User.
-        model.addAttribute("name", crypt);
-        model.addAttribute("ecLink", name);
+        model.addAttribute("name", user);
+
         // Since 2.10.0, uses MongoClient.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
@@ -48,14 +46,10 @@ public class HomeController {
 
     @RequestMapping("/byviews")
     public String reportViews(Model model,
-                              @RequestParam("name") String name, String type) {
-        //Decrypt URL Variable
-        Encrypter e = new Encrypter(name);
-        String crypt = e.smDecrypt();
-
+                              @CookieValue(value = "user") String user, String type) {
         //Display User.
-        model.addAttribute("name", crypt);
-        model.addAttribute("ecLink", name);
+        model.addAttribute("name", user);
+
         // Since 2.10.0, uses MongoClient.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
@@ -74,15 +68,11 @@ public class HomeController {
 
     @RequestMapping("/byType")
     public String reportType(Model model,
-                              @RequestParam("name") String name,
+                             @CookieValue(value = "user") String user,
                               @RequestParam("type") String type) {
-        //Decrypt URL Variable
-        Encrypter e = new Encrypter(name);
-        String crypt = e.smDecrypt();
-
         //Display User.
-        model.addAttribute("name", crypt);
-        model.addAttribute("ecLink", name);
+        model.addAttribute("name", user);
+
         // Since 2.10.0, uses MongoClient.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
@@ -98,14 +88,10 @@ public class HomeController {
 
     @RequestMapping("/byViewsParam")
     public String reportViewsParam(Model model,
-                                   @RequestParam("name") String name, String type) {
-        //Decrypt URL Variable
-        Encrypter e = new Encrypter(name);
-        String crypt = e.smDecrypt();
-
+                                   @CookieValue(value = "user") String user, String type) {
         //Display User.
-        model.addAttribute("name", crypt);
-        model.addAttribute("ecLink", name);
+        model.addAttribute("name", user);
+
         // Since 2.10.0, uses MongoClient.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
@@ -121,14 +107,10 @@ public class HomeController {
 
     @RequestMapping("/recipesUnder30")
     public String recipesUnder30Mins(Model model,
-                                   @RequestParam("name") String name) {
-        //Decrypt URL Variable
-        Encrypter e = new Encrypter(name);
-        String crypt = e.smDecrypt();
-
+                                     @CookieValue(value = "user") String user) {
         //Display User.
-        model.addAttribute("name", crypt);
-        model.addAttribute("ecLink", name);
+        model.addAttribute("name", user);
+
         // Since 2.10.0, uses MongoClient.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
@@ -143,14 +125,10 @@ public class HomeController {
 
     @RequestMapping("/byAtoZ")
     public String atoz(Model model,
-                                   @RequestParam("name") String name, String type) {
-        //Decrypt URL Variable
-        Encrypter e = new Encrypter(name);
-        String crypt = e.smDecrypt();
-
+                       @CookieValue(value = "user") String user, String type) {
         //Display User.
-        model.addAttribute("name", crypt);
-        model.addAttribute("ecLink", name);
+        model.addAttribute("name", user);
+
         // Since 2.10.0, uses MongoClient.
         MongoClient mongo = new MongoClient("localhost", 27017);
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);

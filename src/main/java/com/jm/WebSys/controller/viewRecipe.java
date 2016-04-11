@@ -8,6 +8,7 @@ import com.jm.WebSys.domain.*;
 import com.mongodb.MongoClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -25,16 +26,12 @@ public class viewRecipe {
     @RequestMapping("/viewRecipe")
     public String viewRecipe(Model model,
                              @RequestParam("_id") String id,
-                             @RequestParam("name") String name,
+                             @CookieValue(value = "user") String user,
                              Recipe recipe,
                              Comment comment) {
 
-        //Decrypt URL Variable
-        Encrypter e = new Encrypter(name);
-        String crypt = e.smDecrypt();
         //Display User.
-        model.addAttribute("name", name);
-
+        model.addAttribute("name", user);
         // Since 2.10.0, uses MongoClient.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBRecipeDAO dao = new MongoDBRecipeDAO(mongo);
@@ -65,7 +62,7 @@ public class viewRecipe {
 
         //All comments added to page. Then restrict adding a blank comment.
         if (comment.getComment() == null) {
-            model.addAttribute("ecLink", crypt);
+            model.addAttribute("ecLink", user);
 
             /**
              *
@@ -77,7 +74,7 @@ public class viewRecipe {
             //Make a user access object and create a user with the logged in username.
             MongoDBUserDAO userDAO = new MongoDBUserDAO(mongo);
             User u = new User();
-            u.setUsername(crypt);
+            u.setUsername(user);
             User found = userDAO.getUser(u);
             String uid = found.getId();
 
@@ -102,7 +99,7 @@ public class viewRecipe {
         } else {
             //Fill in extra details for the comment.
             comment.setRid(id);
-            comment.setAuthor(crypt);
+            comment.setAuthor(user);
 
             //get current date time with Date()
             Date date = new Date();
@@ -120,19 +117,18 @@ public class viewRecipe {
     public String addLike(Like like,
                           Model model,
                           @RequestParam("_id") String rid,
-                          @RequestParam("name") String name) {
+                          @CookieValue(value = "user") String user) {
 
-        //Decrypt URL Variable
-        Encrypter e = new Encrypter(name);
-        String crypt = e.smDecrypt();
-        System.out.println("User: " + crypt + " liked the recipe " + rid);
+
+        //Display User.
+        model.addAttribute("name", user);
 
         // Since 2.10.0, uses MongoClient.
         //Get user details first.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBUserDAO userDAO = new MongoDBUserDAO(mongo);
         User u = new User();
-        u.setUsername(crypt);
+        u.setUsername(user);
         User found = userDAO.getUser(u);
         String uid = found.getId();
 
@@ -143,26 +139,25 @@ public class viewRecipe {
         addLike.setUid(uid);
 
         likeDAO.createLike(addLike);
-        return "redirect:/viewRecipe?_id=" + rid + "&name=" +name ;
+        return "redirect:/viewRecipe?_id=" + rid;
     }
 
     @RequestMapping("/removeLike")
     public String removeLike(Like like,
                              Model model,
                              @RequestParam("_id") String rid,
-                             @RequestParam("name") String name){
+                             @CookieValue(value = "user") String user){
 
-        //Decrypt URL Variable
-        Encrypter e = new Encrypter(name);
-        String crypt = e.smDecrypt();
-        System.out.println("User: " + crypt + " liked the recipe " + rid);
+
+        //Display User.
+        model.addAttribute("name", user);
 
         // Since 2.10.0, uses MongoClient.
         //Get user details first.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBUserDAO userDAO = new MongoDBUserDAO(mongo);
         User u = new User();
-        u.setUsername(crypt);
+        u.setUsername(user);
         User found = userDAO.getUser(u);
         String uid = found.getId();
 
@@ -175,7 +170,7 @@ public class viewRecipe {
         Like usersLike = findUserLike(totalRecipeLikes, uid);
         likeDAO.deleteLike(usersLike);
 
-        return "redirect:/viewRecipe?_id=" + rid + "&name=" +name ;
+        return "redirect:/viewRecipe?_id=" + rid;
 
     }
 

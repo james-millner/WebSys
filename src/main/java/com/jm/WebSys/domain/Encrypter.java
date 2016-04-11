@@ -66,46 +66,6 @@ public class Encrypter {
         return result;
     }
 
-    public String smEncrypt() {
-
-        //Encrypt the password by 10 unicode places.
-        String passResult = "";
-        int a = this.password.length();
-        char ps;
-        for(int i = 0; i < a; i++) {
-            ps = this.password.charAt(i);
-            ps += 2;
-            passResult += ps;
-        }
-        this.password = passResult;
-
-        String result = "";
-        result = passResult;
-
-        //System.out.println("ENCRYPTED PASS IS = " + result);
-
-        return result;
-    }
-
-    public String smDecrypt() {
-        //Encrypt the password by 10 unicode places.
-        String passResult = "";
-        int a = this.password.length();
-        char ps;
-        for(int i = 0; i < a; i++) {
-            ps = this.password.charAt(i);
-            ps -= 2;
-            passResult += ps;
-        }
-        this.password = passResult;
-
-        String result = "";
-        result = passResult;
-
-        //System.out.println("DECRYPTED PASS IS = " + result);
-
-        return result;
-    }
 
 
 }
