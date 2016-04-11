@@ -34,9 +34,7 @@ public class SignInController {
 
 		//Creates a Encryption object that encrypts the password.
 		Encrypter e = new Encrypter(userDetails.getPassword());
-		String dPass = e.encrypt();
-		String smallEC = e.smEncrypt();
-
+		String dPass = e.smDecrypt();
     	// Since 2.10.0, uses MongoClient
     	MongoClient mongo = new MongoClient( "localhost" , 27017 );
 

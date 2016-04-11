@@ -51,7 +51,7 @@ public class RegisterController {
 
                 //Make an encryption object with the users password.
                 Encrypter ec = new Encrypter(userDetails.getPassword());
-                String ecPass = ec.encrypt();
+                String ecPass = ec.smEncrypt();
                 //System.out.println("** ENCRYPTER: Original Password: " + userDetails.getPassword() + " Encrypted Password is:" + ecPass);
 
                 // Since 2.10.0, uses MongoClient
@@ -78,7 +78,6 @@ public class RegisterController {
                 dao.createUser(userDetails);
                 mongo.close();
 
-                System.out.println(ec.decrypt());
                 return "redirect:signin";
             }
         }
