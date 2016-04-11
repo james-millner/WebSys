@@ -35,7 +35,7 @@ public class Encrypter {
 		char ps;
 		for(int i = 0; i < a; i++) {
             ps = this.password.charAt(i);
-            ps += 15;
+            ps += 6;
             passResult += ps;
 		}
         this.password = passResult;
@@ -55,7 +55,7 @@ public class Encrypter {
         char ps;
         for(int i = 0; i < a; i++) {
             ps = this.password.charAt(i);
-            ps -= 15;
+            ps -= 6;
             passResult += ps;
         }
         this.password = passResult;
