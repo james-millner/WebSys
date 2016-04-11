@@ -1,7 +1,5 @@
 package com.jm.WebSys.domain;
 
-import java.security.*;
-import javax.crypto.*;
 
 /**
  * Created by James on 04/03/2016.
