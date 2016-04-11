@@ -44,12 +44,12 @@
           <!-- Nav links, forms, and other content-->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li><a href="/homepage?name=${ecLink}">Home <span class="sr-only">(current)</span></a></li>
-              <li class="active"><a href="/profile?name=${ecLink}">Profile</a></li>
+              <li><a href="/homepage">Home <span class="sr-only">(current)</span></a></li>
+              <li class="active"><a href="/profile">Profile</a></li>
               <li class="dropdown-a">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipes! <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="/addRecipe?name=${ecLink}">Add Recipe!</a></li>
+                  <li><a href="/addRecipe">Add Recipe!</a></li>
                 </ul>
               </li>
             </ul>
@@ -93,7 +93,7 @@
         <div id="items">
         <c:forEach var="recipe" items="${rList}">
           <div class="item col-xs-6 col-md-3">
-            <a href="/viewRecipe?_id=${recipe.id}&name=${ecLink}" class="thumbnail">
+            <a href="/viewRecipe?_id=${recipe.id}" class="thumbnail">
               <b>${recipe.rname}</b>
               <br>
               <small>${recipe.ftype}</small>
@@ -111,7 +111,7 @@
         <div id="litems">
           <c:forEach var="recipe" items="${likesList}">
             <div class="item col-xs-6 col-md-3">
-              <a href="/viewRecipe?_id=${recipe.id}&name=${ecLink}" class="thumbnail">
+              <a href="/viewRecipe?_id=${recipe.id}" class="thumbnail">
                 <b>${recipe.rname}</b>
                 <br>
                 <small>${recipe.ftype}</small>

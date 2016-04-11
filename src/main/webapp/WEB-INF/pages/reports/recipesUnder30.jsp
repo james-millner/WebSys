@@ -44,12 +44,12 @@
           <!-- Nav links, forms, and other content-->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="/homepage?name=${ecLink}">Home <span class="sr-only">(current)</span></a></li>
-              <li><a href="/profile?name=${ecLink}">Profile</a></li>
+              <li class="active"><a href="/homepage">Home <span class="sr-only">(current)</span></a></li>
+              <li><a href="/profile">Profile</a></li>
               <li class="dropdown-a">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipes! <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="/addRecipe?name=${ecLink}">Add Recipe!</a></li>
+                  <li><a href="/addRecipe">Add Recipe!</a></li>
                 </ul>
               </li>
             </ul>
@@ -66,10 +66,10 @@
     </div>
   </div>
   <div id="reports" class="container-fluid" align="center">
-    <a href="/byAtoZ?name=${ecLink}" type="submit" class="btn-custom  btn btn-default">A to Z</a>
-    <a href="/byviews?name=${ecLink}" type="submit" class="btn-custom  btn btn-default">Top Recipes!</a>
-    <a href="/recipesUnder30?name=${ecLink}" type="submit" class="btn-custom  btn btn-default">Recipes Under 30 Mins!</a>
-    <a href="/byViewsParam?name=${ecLink}" type="submit" class="btn-custom  btn btn-default">Over 50 Views! </a>
+    <a href="/byAtoZ" type="submit" class="btn-custom  btn btn-default">A to Z</a>
+    <a href="/byviews" type="submit" class="btn-custom  btn btn-default">Top Recipes!</a>
+    <a href="/recipesUnder30" type="submit" class="btn-custom  btn btn-default">Recipes Under 30 Mins!</a>
+    <a href="/byViewsParam" type="submit" class="btn-custom  btn btn-default">Over 50 Views! </a>
     <a type="button" class="btn-custom  btn btn-default" data-toggle="modal" data-target="#typeModal">By Type!</a>
   </div>
 
@@ -85,17 +85,17 @@
         </div>
         <div class="modal-body">
           <p>Select a type: </p>
-          <a href="/byType?name=${ecLink}&type=American" type="submit" class="btn-custom  btn btn-default">American</a>
-          <a href="/byType?name=${ecLink}&type=British" type="submit" class="btn-custom  btn btn-default">British</a>
-          <a href="/byType?name=${ecLink}&type=Caribbean" type="submit" class="btn-custom  btn btn-default">Caribbean</a>
-          <a href="/byType?name=${ecLink}&type=Chinese" type="submit" class="btn-custom  btn btn-default">Chinese</a>
-          <a href="/byType?name=${ecLink}&type=Eastern European" type="submit" class="btn-custom  btn btn-default">Eastern European</a>
-          <a href="/byType?name=${ecLink}&type=French" type="submit" class="btn-custom  btn btn-default">French</a>
-          <a href="/byType?name=${ecLink}&type=Indian" type="submit" class="btn-custom  btn btn-default">Indian</a>
-          <a href="/byType?name=${ecLink}&type=Italian" type="submit" class="btn-custom  btn btn-default">Italian</a>
-          <a href="/byType?name=${ecLink}&type=Mexican" type="submit" class="btn-custom  btn btn-default">Mexican</a>
-          <a href="/byType?name=${ecLink}&type=Spanish" type="submit" class="btn-custom  btn btn-default">Spanish</a>
-          <a href="/byType?name=${ecLink}&type=Thai" type="submit" class="btn-custom  btn btn-default">Thai</a>
+          <a href="/byType?type=American" type="submit" class="btn-custom  btn btn-default">American</a>
+          <a href="/byType?type=British" type="submit" class="btn-custom  btn btn-default">British</a>
+          <a href="/byType?type=Caribbean" type="submit" class="btn-custom  btn btn-default">Caribbean</a>
+          <a href="/byType?type=Chinese" type="submit" class="btn-custom  btn btn-default">Chinese</a>
+          <a href="/byType?type=Eastern European" type="submit" class="btn-custom  btn btn-default">Eastern European</a>
+          <a href="/byType?type=French" type="submit" class="btn-custom  btn btn-default">French</a>
+          <a href="/byType?type=Indian" type="submit" class="btn-custom  btn btn-default">Indian</a>
+          <a href="/byType?type=Italian" type="submit" class="btn-custom  btn btn-default">Italian</a>
+          <a href="/byType?type=Mexican" type="submit" class="btn-custom  btn btn-default">Mexican</a>
+          <a href="/byType?type=Spanish" type="submit" class="btn-custom  btn btn-default">Spanish</a>
+          <a href="/byType?type=Thai" type="submit" class="btn-custom  btn btn-default">Thai</a>
         </div>
         <div class="modal-footer">
           <a href="#" type="submit" class="btn-custom  btn btn-default">Submit</a>
