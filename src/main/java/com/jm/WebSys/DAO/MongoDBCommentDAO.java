@@ -12,6 +12,10 @@ import java.util.List;
 
 /**
  * Created by James on 29/03/2016.
+ *
+ * Mongo Comment Access Object.
+ *
+ * Handles all the methods for retrieving Comment Objects.
  */
 public class MongoDBCommentDAO {
 

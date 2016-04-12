@@ -10,6 +10,10 @@ import java.util.List;
 
 /**
  * Created by James on 05/04/2016.
+ *
+ * Mongo Like Access Object.
+ *
+ * Handles all the methods for retrieving Like Objects.
  */
 public class MongoDBLikeDAO {
 
@@ -40,7 +44,6 @@ public class MongoDBLikeDAO {
 
     public List<Like> getLikesByRID(Like like) {
         String rid = like.getRid();
-        String uid = like.getUid();
         List<Like> likes = new ArrayList<Like>();
         DBObject query = new BasicDBObject();
         query.put("rid", rid);

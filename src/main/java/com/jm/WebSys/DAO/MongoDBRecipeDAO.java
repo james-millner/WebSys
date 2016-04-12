@@ -15,6 +15,10 @@ import java.util.List;
 
 /**
  * Created by James on 06/03/2016.
+ *
+ * Mongo Recipe Access Object.
+ *
+ * Handles all the methods for retrieving Recipe Objects.
  */
 public class MongoDBRecipeDAO {
 

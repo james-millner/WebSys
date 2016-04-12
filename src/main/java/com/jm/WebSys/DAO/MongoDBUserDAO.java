@@ -11,6 +11,10 @@ import org.bson.types.ObjectId;
 
 /**
  * Created by James on 06/03/2016.
+ *
+ * Mongo User Access Object.
+ *
+ * Handles all the methods for retrieving User Objects.
  */
 public class MongoDBUserDAO {
 
