@@ -14,7 +14,7 @@ import org.bson.types.ObjectId;
  */
 public class MongoDBUserDAO {
 
-    private DBCollection db;
+    public DBCollection db;
 
     public MongoDBUserDAO(MongoClient mongo) {
         this.db = mongo.getDB("WebSys").getCollection("users");

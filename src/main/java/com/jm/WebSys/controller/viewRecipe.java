@@ -18,6 +18,12 @@ import java.util.List;
 
 /**
  * Created by James on 25/03/2016.
+ *
+ * View Recipe Controller
+ *
+ * Handles the requests to view each recipe. It has a number of custom methods to sort the list of recipes stored in MongoDB.
+ * It also handles the functionality for liking and de-liking a recipe.
+ *
  */
 
 @Controller
@@ -32,7 +38,7 @@ public class viewRecipe {
 
         //Display User.
         model.addAttribute("name", user);
-        // Since 2.10.0, uses MongoClient.
+        //MongoClient and Recipe Data Access Object.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBRecipeDAO dao = new MongoDBRecipeDAO(mongo);
 
@@ -40,10 +46,11 @@ public class viewRecipe {
         //Set up an empty recipe with the ID that has been selected.
         Recipe r = new Recipe();
         r.setId(id);
-
+        //Get recipe with the passed ID.
         recipe = dao.getRecipe(r);
+        //Increase the view count as the recipe has been requested.
         recipe.setViews(recipe.getViews() + 1);
-
+        //Update the recipe.
         dao.updateRecipe(recipe);
 
         //Add the recipe on screen.
@@ -55,9 +62,9 @@ public class viewRecipe {
         //Make a comment with the ID of the recipe.
         Comment c = new Comment();
         c.setRid(id);
-
+        //Get a list of comments that have the recipes ID.
         List<Comment> commentList = cdao.getRecipeComments(c);
-
+        //Add it to screen.
         model.addAttribute("comments", commentList);
 
         //All comments added to page. Then restrict adding a blank comment.
@@ -86,15 +93,12 @@ public class viewRecipe {
             String yn = "";
             if(like.getId() == null) {
                 yn = "n";
-                System.out.println("You haven't liked this");
             } else {
                 yn = "y";
-                System.out.println("You have Liked this");
             }
             model.addAttribute("liked", yn);
 
             return "viewRecipe";
-
 
         } else {
             //Fill in extra details for the comment.
@@ -106,11 +110,8 @@ public class viewRecipe {
             comment.setTimestamp(date);
 
             cdao.createComment(comment);
-
         }
-
         return "redirect:viewRecipe?_id=" + id;
-
     }
 
     @RequestMapping("/addLike")
@@ -123,7 +124,7 @@ public class viewRecipe {
         //Display User.
         model.addAttribute("name", user);
 
-        // Since 2.10.0, uses MongoClient.
+        //MongoClient and User Data Access Object.
         //Get user details first.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBUserDAO userDAO = new MongoDBUserDAO(mongo);
@@ -152,7 +153,7 @@ public class viewRecipe {
         //Display User.
         model.addAttribute("name", user);
 
-        // Since 2.10.0, uses MongoClient.
+        //MongoClient and User Data Access Object.
         //Get user details first.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBUserDAO userDAO = new MongoDBUserDAO(mongo);

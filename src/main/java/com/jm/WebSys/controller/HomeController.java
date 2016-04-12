@@ -19,10 +19,17 @@ import java.util.List;
 
 /**
  * Created by James on 09/03/2016.
+ *
+ * HOME CONTROLLER
+ *
+ * This is the base controller that handles requests once the user has signed into the application.
+ * It also contains the extra methods created top handle reporting.
+ *
  */
 @Controller
 public class HomeController {
 
+    //Homepage base view, displaying the general list of recipes from MongoDB.
     @RequestMapping("/homepage")
     public String home(Model model,
                        @CookieValue(value = "user") String user) {
@@ -30,27 +37,27 @@ public class HomeController {
         //Display User.
         model.addAttribute("name", user);
 
-        // Since 2.10.0, uses MongoClient.
+        //MongoClient and Recipe Data Access Object.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
 
+        //Get a list of recipes using the DAO.
         List<Recipe> recipes = rdao.getRecipes();
-        List<Recipe> az = recipesUnder30Minutes(recipes);
-        System.out.println(recipes.size());
+
         //Adds all recipes to the model to output in the view.
         model.addAttribute("recipes", recipes);
         mongo.close();
-        sortByViews(recipes);
         return "homepage";
     }
 
+    //By views view, which sorts the recipes by views and displays them on screen.
     @RequestMapping("/byviews")
     public String reportViews(Model model,
                               @CookieValue(value = "user") String user, String type) {
         //Display User.
         model.addAttribute("name", user);
 
-        // Since 2.10.0, uses MongoClient.
+        //MongoClient and Recipe Data Access Object.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
 
@@ -61,11 +68,12 @@ public class HomeController {
 
         //Adds all recipes to the model to output in the view.
         model.addAttribute("recipes", sorted);
-        System.out.println("SELECTED : " + type);
+
         mongo.close();
         return "/reports/byViews";
     }
 
+    //By Type view. Similar to by views, but only retrieves recipes of a certain type.
     @RequestMapping("/byType")
     public String reportType(Model model,
                              @CookieValue(value = "user") String user,
@@ -73,26 +81,28 @@ public class HomeController {
         //Display User.
         model.addAttribute("name", user);
 
-        // Since 2.10.0, uses MongoClient.
+        //MongoClient and Recipe Data Access Object.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
 
         //Get general list of recipes
         List<Recipe> recipes = rdao.getRecipes();
         List<Recipe> sorted = sortByType(recipes,type);
+
         //Adds all recipes to the model to output in the view.
         model.addAttribute("recipes", sorted);
         mongo.close();
         return "/reports/byType";
     }
 
+    //By views again, but with a param value.
     @RequestMapping("/byViewsParam")
     public String reportViewsParam(Model model,
-                                   @CookieValue(value = "user") String user, String type) {
+                                   @CookieValue(value = "user") String user) {
         //Display User.
         model.addAttribute("name", user);
 
-        // Since 2.10.0, uses MongoClient.
+        //MongoClient and Recipe Data Access Object.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
 
@@ -100,18 +110,20 @@ public class HomeController {
         List<Recipe> recipes = rdao.getRecipes();
         //Create a new list and sort by view count
         List<Recipe> sorted = sortByViews(recipes);
+
         List<Recipe> sortedByParam = sortByViewsSpecified(sorted, 50);
         model.addAttribute("recipes", sortedByParam);
         return "/reports/byViewsByParam";
     }
 
+    //Recipes under 30 minutes. This sorts the recipes by minutes and displays quick recipes.
     @RequestMapping("/recipesUnder30")
     public String recipesUnder30Mins(Model model,
                                      @CookieValue(value = "user") String user) {
         //Display User.
         model.addAttribute("name", user);
 
-        // Since 2.10.0, uses MongoClient.
+        //MongoClient and Recipe Data Access Object.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
 
@@ -125,11 +137,11 @@ public class HomeController {
 
     @RequestMapping("/byAtoZ")
     public String atoz(Model model,
-                       @CookieValue(value = "user") String user, String type) {
+                       @CookieValue(value = "user") String user) {
         //Display User.
         model.addAttribute("name", user);
 
-        // Since 2.10.0, uses MongoClient.
+        //MongoClient and Recipe Data Access Object.
         MongoClient mongo = new MongoClient("localhost", 27017);
         MongoDBRecipeDAO rdao = new MongoDBRecipeDAO(mongo);
 
@@ -140,15 +152,15 @@ public class HomeController {
         return "/reports/byAtoZ";
     }
 
+    //Method for sorting the recipes by type.
     public List<Recipe> sortByType(List<Recipe> recipes, String fType) {
         //Make a results list to return.
         List<Recipe> results = new ArrayList<Recipe>();
         //Int to loop through entire array.
         int size = recipes.size();
-        System.out.println(size + " SIZE HERE");
-
         for(int i = 0; i < size; i++) {
             Recipe r = recipes.get(i);
+            //If the recipe matches the passed type param, add to the results list.
             if (r.getFtype().equals(fType)) {
                 results.add(r);
             }
@@ -194,6 +206,7 @@ public class HomeController {
 
     }
 
+    //Method for sorting by a specified number of views.
     public List<Recipe> sortByViewsSpecified(List<Recipe> recipes, int cutoff){
         List<Recipe> results = new ArrayList<Recipe>();
         for(int i = 0; i < recipes.size(); i++){
@@ -201,13 +214,13 @@ public class HomeController {
             Recipe r = recipes.get(i);
             //If the view count is bigger than the passed parameter, store it.
             if(r.getViews() > cutoff ) {
-                System.out.println(r.getViews());
                 results.add(r);
             }
         }
         return results;
     }
 
+    //Method for showing recipes that are under 30 minutes in total.
     public List<Recipe> recipesUnder30Minutes(List<Recipe> recipes){
         List<Recipe> results = new ArrayList<Recipe>();
         for(int i = 0; i < recipes.size(); i++){
@@ -215,7 +228,6 @@ public class HomeController {
             Recipe r = recipes.get(i);
             //If the recipe minute count is 15 or under, then add to results.
             if(r.getRmins() <= 30 && r.getRhours() == 0 ) {
-                System.out.println(r.getRname());
                 results.add(r);
             }
         }

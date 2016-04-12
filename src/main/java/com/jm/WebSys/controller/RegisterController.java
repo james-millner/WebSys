@@ -22,9 +22,17 @@ import com.mongodb.DBCursor;
 import com.mongodb.MongoClient;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 /**
  * Created by James on 03/03/2016.
+ *
+ * Register Controller
+ *
+ * This controller handles the registration process to sign up and use the application. It creates users with a combination of forms
+ * and Mongo Access Objects.
+ *
  */
 
 @Controller
@@ -34,7 +42,8 @@ public class RegisterController {
 	@RequestMapping("/register")
     public String register(@ModelAttribute("userModel")
                            @Valid User userDetails,
-                           BindingResult bindingResult) {
+                           BindingResult bindingResult,
+                           HttpServletResponse response) {
     	
     	//Just reached the page, if null stop.
     	if(userDetails.getFname() == null) {
@@ -45,19 +54,14 @@ public class RegisterController {
                 return "register";
             } else {
 
-
-                System.out.println(userDetails.getFname() + "-" + userDetails.getSname());
-                System.out.println(userDetails.getUsername() + "-" + userDetails.getPassword() + "-" + userDetails.getDob());
-
                 //Make an encryption object with the users password.
                 Encrypter ec = new Encrypter(userDetails.getPassword());
                 String ecPass = ec.encrypt();
-                //System.out.println("** ENCRYPTER: Original Password: " + userDetails.getPassword() + " Encrypted Password is:" + ecPass);
 
-                // Since 2.10.0, uses MongoClient
+                //MongoClient
                 MongoClient mongo = new MongoClient("localhost", 27017);
-                DB db = mongo.getDB("WebSys");
-                DBCollection table = db.getCollection("users");
+                MongoDBUserDAO userDAO = new MongoDBUserDAO(mongo);
+                DBCollection table = userDAO.db;
 
                 //Check the username doesn't already exist.
                 BasicDBObject searchQuery = new BasicDBObject();
@@ -78,12 +82,16 @@ public class RegisterController {
                 dao.createUser(userDetails);
                 mongo.close();
 
-                System.out.println(ec.decrypt());
-                return "redirect:signin";
+                Cookie cookie = new Cookie("user", userDetails.getUsername());
+                cookie.setMaxAge(10000);
+                response.addCookie(cookie);
+
+                return "redirect:homepage";
             }
         }
 
    }
+    //If the username is taken the user is displayed an error screen with the taken username.
     @RequestMapping("/signInError")
     public String error(Model model,
                         @RequestParam("name") String name) {
@@ -91,7 +99,7 @@ public class RegisterController {
         return "signInUsernameError";
     }
 
-    public void checkUsername(String uname) {}
+
 
 	
 

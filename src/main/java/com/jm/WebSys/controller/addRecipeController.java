@@ -15,6 +15,11 @@ import java.util.Date;
 
 /**
  * Created by James on 17/03/2016.
+ *
+ * Add Recipe Controller.
+ *
+ * This controller handles adding a new recipe into the system. It uses a combination of Cookies and a Form to build recipe data.
+ *
  */
 
 @Controller
@@ -32,15 +37,8 @@ public class addRecipeController {
             return "addRecipe";
         }
 
-        System.out.println(recipe.getRname());
-        System.out.println(recipe.getRdesc());
-        System.out.println(recipe.getRingredients());
-        System.out.println(recipe.getRhours());
-        System.out.println(recipe.getRmins());
-        System.out.println(recipe.getRmethod());
         recipe.setCreator(user);
         recipe.setViews(0);
-
         //get current date time with Date()
         Date date = new Date();
         recipe.setTimecreated(date);
@@ -49,7 +47,7 @@ public class addRecipeController {
             model.addAttribute("success", recipe.getRname() + " has been added!");
         }
 
-        // Since 2.10.0, uses MongoClient
+        //MongoClient and Recipe Data Access Object.
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         MongoDBRecipeDAO dao = new MongoDBRecipeDAO(mongo);
         dao.createRecipe(recipe);
