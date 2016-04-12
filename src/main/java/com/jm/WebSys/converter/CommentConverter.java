@@ -11,6 +11,10 @@ import java.util.Date;
 
 /**
  * Created by James on 29/03/2016.
+ *
+ * CommentConverter Object.
+ *
+ * This converts the database objects for comments into Java Objects, which are used in the Controllers.
  */
 public class CommentConverter {
 

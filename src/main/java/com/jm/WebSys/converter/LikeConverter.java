@@ -8,6 +8,10 @@ import org.bson.types.ObjectId;
 
 /**
  * Created by James on 05/04/2016.
+ *
+ * Like Converter Object
+ *
+ * This converts the database objects for likes into Java Objects, which are used in the Controllers.
  */
 public class LikeConverter {
 

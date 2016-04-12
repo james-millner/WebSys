@@ -11,7 +11,9 @@ import java.util.Date;
 /**
  * Created by James on 06/03/2016.
  *
- * Class for converting database objects from MongoDB into Java Objects.
+ * Recipe Convert Object
+ *
+ * This converts the database objects for recipes into Java Objects, which are used in the Controllers.
  *
  */
 public class RecipeConverter {

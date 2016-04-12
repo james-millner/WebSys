@@ -11,8 +11,9 @@ import java.util.Date;
 /**
  * Created by James on 06/03/2016.
  *
- * Class for converting database objects from MongoDB into Java Objects.
+ * User Converter Object.
  *
+ * This converts the database objects for users into Java Objects, which are used in the Controllers.
  */
 public class UserConverter {
 
