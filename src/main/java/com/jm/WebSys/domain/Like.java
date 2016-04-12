@@ -2,6 +2,9 @@ package com.jm.WebSys.domain;
 
 /**
  * Created by James on 05/04/2016.
+ *
+ * Model for Like Object.
+ *
  */
 public class Like {
 

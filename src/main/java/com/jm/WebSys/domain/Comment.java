@@ -4,6 +4,9 @@ import java.util.Date;
 
 /**
  * Created by James on 29/03/2016.
+ *
+ * Model for Comments.
+ *
  */
 public class Comment {
 

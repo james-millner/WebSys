@@ -7,6 +7,11 @@ import java.util.Date;
 
 /**
  * Created by James on 21/03/2016.
+ *
+ * Model for Recipe Object.
+ *
+ * Implements the Comparable interface to compare recipe views! Also with Comparator to compare the names of recipes
+ * and allow to sort in A-Z.
  */
 public class Recipe implements Comparable<Recipe> {
 

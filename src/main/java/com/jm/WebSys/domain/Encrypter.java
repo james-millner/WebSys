@@ -3,6 +3,10 @@ package com.jm.WebSys.domain;
 
 /**
  * Created by James on 04/03/2016.
+ *
+ * Model for Encrypter Object.
+ *
+ * This class encrypts and decrypts a String.
  */
 
 public class Encrypter {
@@ -29,7 +33,8 @@ public class Encrypter {
 	public String encrypt() {
         //Encrypt the password by 10 unicode places.
         String passResult = "";
-		int a = this.password.length();
+        String result = "";
+        int a = this.password.length();
 		char ps;
 		for(int i = 0; i < a; i++) {
             ps = this.password.charAt(i);
@@ -38,10 +43,7 @@ public class Encrypter {
 		}
         this.password = passResult;
 
-        String result = "";
         result = passResult;
-
-        //System.out.println("ENCRYPTED PASS IS = " + result);
 
         return result;
 	}
@@ -49,6 +51,7 @@ public class Encrypter {
 	public  String decrypt() {
         //Encrypt the password by 10 unicode places.
         String passResult = "";
+        String result = "";
         int a = this.password.length();
         char ps;
         for(int i = 0; i < a; i++) {
@@ -58,10 +61,9 @@ public class Encrypter {
         }
         this.password = passResult;
 
-        String result = "";
+
         result = passResult;
 
-        //System.out.println("DECRYPTED PASS IS = " + result);
 
         return result;
     }

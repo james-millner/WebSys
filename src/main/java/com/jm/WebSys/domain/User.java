@@ -4,6 +4,9 @@ import javax.validation.constraints.Size;
 import java.util.Date;
 /**
  * Created by James on 03/03/2016.
+ *
+ * Model for User Object.
+ *
  */
 public class User {
 	
