@@ -39,7 +39,7 @@
 		  </div>
 		  <div class="form-group input-group-sm">
 			  <p>Date Of Birth: </p>
-			  <input type="text" style="width: 200px" id="inputDOB" class="form-control" placeholder="DD/MM/YYYY" name="dob" required/>
+			  <input type="date" style="width: 200px" id="inputDOB" class="form-control" name="dob" required/>
 		  </div>
   		<div class="form-group input-group-sm">
 			<p>Username: </p>
