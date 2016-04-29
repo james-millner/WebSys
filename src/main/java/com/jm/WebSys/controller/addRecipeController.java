@@ -44,7 +44,8 @@ public class addRecipeController {
         recipe.setTimecreated(date);
 
         if (recipe.getRname() != null ) {
-            model.addAttribute("success", recipe.getRname() + " has been added!");
+            model.addAttribute("success", "true");
+            model.addAttribute("recipeName", recipe.getRname());
         }
 
         //MongoClient and Recipe Data Access Object.

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,6 +74,7 @@
   <div class="container">
     <p id="intro">Please use the following form to add a new recipe!. All fields marked * are required. </p>
   </div>
+
   <form method="POST" action="" command="recipe">
     <div id="content" class="container-fluid">
       <div class="row-fluid">
@@ -125,12 +127,20 @@
               <
           </div>
           <div class="input-group" style="padding-top: 5px">
-            <button class="btn btn-warning " type="submit">Add Recipe!</button> <p>${success}</p>
+            <button class="btn btn-warning " type="submit">Add Recipe!</button>
+            <br>
           </div>
-        </div>
 
+        </div>
       </div>
     </div>
+      <c:if test="${success == 'true'}">
+        <div class="col-md-12" style="margin-top: 20px">
+          <div class="alert alert-success alert-dismissible" role="alert">
+            <p style="color: black;"><strong>Success!</strong> ${recipeName} has been added!.</p>
+          </div>
+        </div>
+      </c:if>
     </div>
   </form>
   <div class="container">
