@@ -98,8 +98,6 @@
           <a href="/byType?type=Thai" type="submit" class="btn-custom  btn btn-default">Thai</a>
         </div>
         <div class="modal-footer">
-          <a href="#" type="submit" class="btn-custom  btn btn-default">Submit</a>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
 

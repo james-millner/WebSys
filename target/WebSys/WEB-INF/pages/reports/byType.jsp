@@ -98,8 +98,6 @@
           <a href="/byType?type=Thai" type="submit" class="btn-custom  btn btn-default">Thai</a>
         </div>
         <div class="modal-footer">
-          <a href="#" type="submit" class="btn-custom  btn btn-default">Submit</a>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
 
@@ -107,31 +105,38 @@
   </div>
   <div id="content" class="container-fluid">
        <div id="recipes" class="col-md-12">
-        <c:forEach var="recipe" items="${recipes}">
-          <c:url value="/viewRecipe?_id=${recipe.id}&name=${ecLink}" var="viewRecipe"></c:url>
-          <div id="recipe" class="row">
-            <div id="dname" class="col-xs-12">
-              <p id="rname">${recipe.rname}</p>
-            </div>
-            <div id="ddesc" class="col-xs-6">
-              <p><b>Description: </b><br>${recipe.rdesc}</p>
-            </div>
-            <div id="dtime" class="col-xs-6">
-              <div id="dtarea" class="col-xs-2" align="center">
-                <span class="glyphicon glyphicon-time" style="color: azure" aria-hidden="true"></span> <p>${recipe.rhours} H<br>${recipe.rmins} M</p>
+         <c:if test="${recipes.size() == 0}" >
+           <div class="col-md-12" align="center">
+             <p id="noRecipe">There are no recipes of this type! Please try another type!</p>
+           </div>
+         </c:if>
+         <c:if test="${recipes.size() > 0}">
+            <c:forEach var="recipe" items="${recipes}">
+              <c:url value="/viewRecipe?_id=${recipe.id}&name=${ecLink}" var="viewRecipe"></c:url>
+              <div id="recipe" class="row">
+                <div id="dname" class="col-xs-12">
+                  <p id="rname">${recipe.rname}</p>
+                </div>
+                <div id="ddesc" class="col-xs-6">
+                  <p><b>Description: </b><br>${recipe.rdesc}</p>
+                </div>
+                <div id="dtime" class="col-xs-6">
+                  <div id="dtarea" class="col-xs-2" align="center">
+                    <span class="glyphicon glyphicon-time" style="color: azure" aria-hidden="true"></span> <p>${recipe.rhours} H<br>${recipe.rmins} M</p>
+                  </div>
+                  <div id="dviews" class="col-xs-2">
+                    <span class="glyphicon glyphicon-user" style="color: azure" aria-hidden="true"></span> <p>${recipe.views}</p>
+                  </div>
+                  <div id="dtype" class="col-xs-2" align="center">
+                    <span class="glyphicon glyphicon-menu-down" style="color: azure" aria-hidden="true"> <p>${recipe.ftype}</p></span>
+                  </div>
+                  <div class="col-xs-6">
+                    <a class="btn icon-btn btn-default" style="max-width: 215px" href='<c:out value="${viewRecipe}"></c:out>'><span class="glyphicon btn-glyphicon glyphicon-blackboard img-circle text-muted"></span>View Recipe</a>
+                  </div>
+                </div>
               </div>
-              <div id="dviews" class="col-xs-2">
-                <span class="glyphicon glyphicon-user" style="color: azure" aria-hidden="true"></span> <p>${recipe.views}</p>
-              </div>
-              <div id="dtype" class="col-xs-2" align="center">
-                <span class="glyphicon glyphicon-menu-down" style="color: azure" aria-hidden="true"> <p>${recipe.ftype}</p></span>
-              </div>
-              <div class="col-xs-6">
-                <a class="btn icon-btn btn-default" style="max-width: 215px" href='<c:out value="${viewRecipe}"></c:out>'><span class="glyphicon btn-glyphicon glyphicon-blackboard img-circle text-muted"></span>View Recipe</a>
-              </div>
-            </div>
-          </div>
-        </c:forEach>
+            </c:forEach>
+         </c:if>
     </div>
   </div>
   <div class="container">
